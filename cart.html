@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的購物車 | TheBook Life</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(245, 245, 245, 0.85);
+            font-family: sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 30%;
+            left: 5%;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 25px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -45px;
+            margin-left: 70px;
+            font-size: 35px;
+        }
+
+        /*logo+搜尋引擎+會員專區+購物車*/
+        .main {
+            width: 70%;
+            height: auto;
+            margin: 30px auto;
+            background-color: white;
+        }
+
+        .container {
+            margin: 10px auto;
+            width: 1000px;
+            border-radius: 5px;
+            color: black;
+            padding: 20px 10px;
+            position: relative;
+            height: 1100px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .cart-1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        th {
+            text-align: left;
+            padding: 5px 15px;
+            color: white;
+            background: black;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        td {
+            padding: 10px 5px;
+            font-family: sans-serif;
+            margin: 30px auto;
+        }
+
+        td input {
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        td a {
+            color: rgb(179, 35, 35);
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        td img {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            font-family: sans-serif;
+        }
+
+        .total table {
+            border-top: 3px solid black;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+
+        th:last-child {
+            text-align: right;
+        }
+
+        .checkbox {
+            margin: -3px 5px 5 0;
+            float: left;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #dad8d3;
+            border-radius: 3px;
+            background: #ffffff;
+
+        }
+
+        /**/
+        .btn1,
+        .btn2 {
+            position: absolute;
+            width: 19%;
+            background-color: black;
+            border: 2px solid;
+            padding: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 60px;
+            padding: 10px;
+            color: white;
+        }
+
+        .btn1 {
+            right: 21%;
+        }
+
+        .btn2 {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <h2>購物車</h2>
+            <table>
+                <tr>
+                    <th>商品</th>
+                    <th>數量</th>
+                    <th>價格</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-1">
+                            <input type="checkbox" class="checkbox">
+                            <img src="book/jackson.jpg">
+                            <div>
+                                <p>Percy Jackson</p>
+                                <small>價格:$800</small>
+                                <br>
+                                <a href="#">取消訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$800</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-1">
+                            <input type="checkbox" class="checkbox">
+                            <img src="book/harry.jpg">
+                            <div>
+                                <p>Harry Potter</p>
+                                <small>價格:$900</small>
+                                <br>
+                                <a href="#">取消訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$900</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-1">
+                            <input type="checkbox" class="checkbox">
+                            <img src="book/js.jpg">
+                            <div>
+                                <p>Java Script</p>
+                                <small>價格:$1000</small>
+                                <br>
+                                <a href="#">取消訂單</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$1000</td>
+                </tr>
+            </table>
+            <div class="total">
+                <table>
+                    <tr>
+                        <td>小計</td>
+                        <td>$2700</td>
+                    </tr>
+                    <tr>
+                        <td>折價劵</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>總計</td>
+                        <td>$2600</td>
+                    </tr>
+                </table>
+            </div>
+            <input class="btn1" type="submit" name="" value="繼續購物" onclick="self.location.href='index.html'">
+            <input class="btn2" type="submit" name="" value="結帳" onclick="self.location.href='checkout.html'">
+        </div>
+    </div>
+</body>
+
+</html>

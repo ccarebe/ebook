@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 | TheBook Life</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 30%;
+            left: 5%;
+        }
+
+        .member {
+            width: 20%;
+            left: 60%;
+            text-align: right;
+        }
+
+        .cart {
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 35px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        .mc-icon {
+            margin-top: 40px;
+            font-size: 11px;
+        }
+
+        .hicon {
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+
+        .ms {
+            margin-right: 70px;
+        }
+
+        .ct {
+            margin-right: 85px;
+        }
+
+        .tha {
+            color: black;
+        }
+
+        .tha :hover {
+            color: rgb(201, 150, 56);
+        }
+
+        /*logo+會員專區+購物車*/
+        .bottom-header {
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+
+        .bh {
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+
+        .aboutus {
+            left: 5%;
+        }
+
+        .leaderboard {
+            left: 20%;
+        }
+
+        .book {
+            left: 35%;
+        }
+
+        .magazine {
+            left: 50%;
+        }
+
+        .comic {
+            left: 65%;
+        }
+
+        .novel {
+            left: 80%;
+        }
+
+        .bh:hover {
+            background-color: white;
+        }
+
+        .bh:hover h2 {
+            color: black;
+        }
+
+        .bh h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /*關於我們+暢銷排行+書籍分類連結*/
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            position: relative;
+            min-height: 1px;
+        }
+
+        .team {
+            min-height: 100vh;
+            padding: 60px 15px;
+        }
+
+        .team .card {
+            width: 23%;
+            float: left;
+            padding: 0px 15px;
+
+        }
+
+        .team .card .box {
+            padding: 70px;
+            background: black;
+            transition: margin 1s ease, box-shadow 1s ease;
+            width: 120%;
+            height: 600px;
+            margin: 50px auto 0 auto;
+        }
+
+        .team .card .box:hover {
+            margin: -15px;
+            box-shadow: 0px 0px 40px black;
+        }
+
+        .team .card .box img {
+            width: 200px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .team .card .box h4 {
+            font-size: 20px;
+            font-family: sans-serif;
+            margin: 20px 0px 10px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .team .card .box h5 {
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: 600;
+            margin: 0px 0px 15px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /**/
+        .footer {
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="member th">
+                    <a href="member.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ms" src="icon/profile-user.png" alt="素材">
+                            <h2>會員專區</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="cart.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ct" src="icon/shopping-cart.png" alt="素材">
+                            <h2>購物車</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="team">
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <img src="about/r.jpg">
+                    <h4>吳珮雅</h4>
+                    <h5>企管三乙</h5>
+                    <a href="https://www.facebook.com/rebecca.wu.161214"><img src="social/fb.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href="https://instagram.com/ccarebe_3?r=nametag"><img src="social/ig.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href="https://line.me/ti/p/fdLtiP4uzz"><img src="social/line.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="about/chen.jpg">
+                    <h4>陳荐洋</h4>
+                    <h5>資管二甲</h5>
+                    <a href="https://www.facebook.com/jacksoncjy.963/"><img src="social/fb.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href="https://www.instagram.com/jackson.cjy/"><img src="social/ig.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href="https://line.me/ti/p/UELSSH0Jpr"><img src="social/line.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="about/lu.jpg">
+                    <h4>余家如</h4>
+                    <h5>會計四甲</h5>
+                    <a href=""><img src="social/fb.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href=""><img src="social/ig.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href=""><img src="social/line.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="about/vicky.jpg">
+                    <h4>曾思綺</h4>
+                    <h5>商學學士學位學程四</h5>
+                    <a href=""><img src="social/fb.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href=""><img src="social/ig.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                    <a href=""><img src="social/line.jpg"
+                            style="width: 40px; height: 45; float: left; border-radius: 20%; margin: 13px;"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書籍 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0);
+        }
+
+        section a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 25%;
+            left: 5%;
+        }
+
+        .search {
+            width: 40%;
+            left: 25%;
+        }
+
+        .member {
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+
+        .cart {
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 35px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        .mc-icon {
+            margin-top: 40px;
+            font-size: 11px;
+        }
+
+        .hicon {
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+
+        .ms {
+            margin-right: 70px;
+        }
+
+        .ct {
+            margin-right: 85px;
+        }
+
+        .tha {
+            color: black;
+        }
+
+        .tha :hover {
+            color: rgb(201, 150, 56);
+        }
+
+        /*會員+購物車*/
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+
+        form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜尋框1*/
+        .bar1 input {
+            border: 2px solid black;
+        }
+
+        .bar1 button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*logo+搜尋引擎+會員專區+購物車*/
+        .bottom-header {
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+
+        .bh {
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+
+        .aboutus {
+            left: 5%;
+        }
+
+        .leaderboard {
+            left: 20%;
+        }
+
+        .book {
+            left: 35%;
+        }
+
+        .magazine {
+            left: 50%;
+        }
+
+        .comic {
+            left: 65%;
+        }
+
+        .novel {
+            left: 80%;
+        }
+
+        .bh:hover {
+            background-color: white;
+        }
+
+        .bh:hover h2 {
+            color: rgb(201, 150, 56);
+        }
+
+        .bh h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .main {
+            margin: 50px auto 0 auto;
+            width: 90%;
+            height: 5500px;
+            position: relative;
+        }
+
+        .section2 {
+            position: absolute;
+            left: 15%;
+            width: 85%;
+            height: auto;
+        }
+
+        .title {
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 17px;
+            text-align: left;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .rec {
+            width: 100%;
+            height: 430px;
+            margin: 0 auto;
+            background-color: white;
+            position: relative;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        .rb {
+            position: absolute;
+            width: 20%;
+        }
+
+        .r1 {
+            left: 0;
+        }
+
+        .r2 {
+            left: 20%;
+        }
+
+        .r3 {
+            left: 40%;
+        }
+
+        .r4 {
+            left: 60%;
+        }
+
+        .r5 {
+            left: 80%;
+        }
+
+        .img {
+            text-align: center;
+        }
+
+        .rimg {
+            transition: transform 1s ease;
+            width: 85%;
+            height: 270px;
+        }
+
+        .rimg:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+        .name {
+            font-size: 18px;
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 20px;
+            color: rgb(179, 35, 35);
+        }
+
+        /**/
+        /* Create a column layout with Flexbox */
+        .row {
+            position: fixed;
+            left: 5%;
+            bottom: 5%;
+            height: 525px;
+            display: flex;
+            width: 200px;
+        }
+
+        /* Left column (menu) */
+        .left {
+            flex: 35%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .left h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Style the search box */
+        #mySearch {
+            width: 100%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+
+        /* Style the navigation menu inside the left column */
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        #myMenu li a {
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+            display: block
+        }
+
+        #myMenu li {
+            height: 40px;
+        }
+
+        #myMenu li a:hover {
+            background-color: white;
+            color: rgb(201, 150, 56);
+            font-weight: bold;
+        }
+        /**/
+        .top{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /**/
+        .footer {
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form>
+                                <input type="text">
+                                <button type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="member.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ms" src="icon/profile-user.png" alt="素材">
+                            <h2>會員專區</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="cart.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ct" src="icon/shopping-cart.png" alt="素材">
+                            <h2>購物車</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="main">
+            <div class="s2_left">
+                <div class="row">
+                    <div class="left" style="background-color:rgba(0, 0, 0, 0.8);">
+                        <h2>分類導覽</h2>
+                        <input class="ser" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.."
+                            title="Type in a category">
+                        <ul id="myMenu">
+                            <li><a href="#1">勵志成長</a></li>
+                            <li><a href="#2">商業理財</a></li>
+                            <li><a href="#3">文學小說</a></li>
+                            <li><a href="#4">旅遊觀光</a></li>
+                            <li><a href="#5">社會科學</a></li>
+                            <li><a href="#6">生活風格</a></li>
+                            <li><a href="#7">教育</a></li>
+                            <li><a href="#8">藝術設計</a></li>
+                            <li><a href="#9">有聲書</a></li>
+                            <li><a href="#10">外文書</a></li>
+                        </ul>
+                    </div>
+
+                    <script>
+                        function myFunction() {
+                            var input, filter, ul, li, a, i;
+                            input = document.getElementById("mySearch");
+                            filter = input.value.toUpperCase();
+                            ul = document.getElementById("myMenu");
+                            li = ul.getElementsByTagName("li");
+                            for (i = 0; i < li.length; i++) {
+                                a = li[i].getElementsByTagName("a")[0];
+                                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                    li[i].style.display = "";
+                                } else {
+                                    li[i].style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="section2">
+                <div id="1">
+                    <div class="title">
+                        <h2>勵志成長</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture//book/grow1.jpg" alt="">
+                                    <p class="name">超速學習</p>
+                                    <p class="nt">NT$ <span class="price">266</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture//book/grow2.jpg" alt="">
+                                <p class="name">療癒孤寂</p>
+                                <p class="nt">NT$ <span class="price">252</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture//book/grow3.jpg" alt="">
+                                <p class="name">我想跟你好好說話:賴佩霞的六堂「非暴力溝通」入門課</p>
+                                <p class="nt">NT$ <span class="price">259</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture//book/grow4.jpg" alt="">
+                                <p class="name">自己的力學：找到喜歡又做得好的事</p>
+                                <p class="nt">NT$ <span class="price">259</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture//book/grow5.jpg" alt="">
+                                <p class="name">象與騎象人:全球百大思想家的正向心理學經典</p>
+                                <p class="nt">NT$ <span class="price">234</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="2">
+                    <div class="title">
+                        <h2>商業理財</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/ecomic1.jpg" alt="">
+                                    <p class="name">原子習慣</p>
+                                    <p class="nt">NT$ <span class="price">231</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/ecomic2.jpg" alt="">
+                                <p class="name">大腦這樣記憶，什麼都學得會</p>
+                                <p class="nt">NT$ <span class="price">252</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/ecomic3.jpg" alt="">
+                                <p class="name">投資最重要的事</p>
+                                <p class="nt">NT$ <span class="price">266</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/ecomic4.jpg" alt="">
+                                <p class="name">窮查理的普通常識（增修版）</p>
+                                <p class="nt">NT$ <span class="price">315</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/ecomic5.jpg" alt="">
+                                <p class="name">習慣致富人生實踐版</p>
+                                <p class="nt">NT$ <span class="price">300</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="3">
+                    <div class="title">
+                        <h2>文學小說</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="item.html">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/write1.jpg" alt="">
+                                    <p class="name">北光</p>
+                                    <p class="nt">NT$ <span class="price">308</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/write2.jpg" alt="">
+                                <p class="name">刻在你心底的名字 原著小說</p>
+                                <p class="nt">NT$ <span class="price">188</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/write3.jpg" alt="">
+                                <p class="name">莫斯科紳士：A Gentleman in Moscow</p>
+                                <p class="nt">NT$ <span class="price">315</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/write4.jpg" alt="">
+                                <p class="name">鬼地方</p>
+                                <p class="nt">NT$ <span class="price">266</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/write5.jpg" alt="">
+                                <p class="name">不能贏的辯護【艾迪．弗林系列1】</p>
+                                <p class="nt">NT$ <span class="price">266</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="4">
+                    <div class="title">
+                        <h2>旅遊觀光</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/travel1.jpg" alt="">
+                                    <p class="name">一個人的無謀小旅行</p>
+                                    <p class="nt">NT$ <span class="price">266</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/travel2.jpg" alt="">
+                                <p class="name">北歐聖奧拉夫朝聖之路</p>
+                                <p class="nt">NT$ <span class="price">315</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/travel3.jpg" alt="">
+                                <p class="name">情旅土耳其</p>
+                                <p class="nt">NT$ <span class="price">270</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/travel4.jpg" alt="">
+                                <p class="name">東京直送</p>
+                                <p class="nt">NT$ <span class="price">245</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/travel5.jpg" alt="">
+                                <p class="name">法國佬，幹得好！</p>
+                                <p class="nt">NT$ <span class="price">379</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="5">
+                    <div class="title">
+                        <h2>社會科學</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/social1.jpg" alt="">
+                                    <p class="name">唐鳳：我所看待的自由與未來</p>
+                                    <p class="nt">NT$ <span class="price">315</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/social2.jpg" alt="">
+                                <p class="name">真確：扭轉十大直覺偏誤，發現事情比你想的美好</p>
+                                <p class="nt">NT$ <span class="price">280</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/social3.jpg" alt="">
+                                <p class="name">宋氏三姊妹與她們的丈夫</p>
+                                <p class="nt">NT$ <span class="price">315</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/social4.jpg" alt="">
+                                <p class="name">文青這種生物，自古就有</p>
+                                <p class="nt">NT$ <span class="price">217</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/social5.jpg" alt="">
+                                <p class="name">應許之地：歐巴馬回憶錄</p>
+                                <p class="nt">NT$ <span class="price">595</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="6">
+                    <div class="title">
+                        <h2>生活風格</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/life1.jpg" alt="">
+                                    <p class="name">保養常識9成都是騙人的</p>
+                                    <p class="nt">NT$ <span class="price">250</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/life2.jpg" alt="">
+                                <p class="name">神之雫，葡萄酒秒懂BOOK</p>
+                                <p class="nt">NT$ <span class="price">228</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/life3.jpg" alt="">
+                                <p class="name">餐桌上的語言學家</p>
+                                <p class="nt">NT$ <span class="price">266</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/life4.jpg" alt="">
+                                <p class="name">運動基因</p>
+                                <p class="nt">NT$ <span class="price">364</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/life5.jpg" alt="">
+                                <p class="name">抗老化，你需要大重量訓練</p>
+                                <p class="nt">NT$ <span class="price">356</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="7">
+                    <div class="title">
+                        <h2>教育</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/edu1.jpg" alt="">
+                                    <p class="name">薩提爾的對話練習</p>
+                                    <p class="nt">NT$ <span class="price">280</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/edu2.jpg" alt="">
+                                <p class="name">一本你希望父母讀過的書（孩子也會慶幸你讀過）</p>
+                                <p class="nt">NT$ <span class="price">250</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/edu3.jpg" alt="">
+                                <p class="name">薩提爾的親子情緒課</p>
+                                <p class="nt">NT$ <span class="price">251</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/edu4.jpg" alt="">
+                                <p class="name">超級嬰兒通實作篇</p>
+                                <p class="nt">NT$ <span class="price">294</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/edu5.jpg" alt="">
+                                <p class="name">正向聚焦</p>
+                                <p class="nt">NT$ <span class="price">266</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="8">
+                    <div class="title">
+                        <h2>藝術設計</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/design1.jpg" alt="">
+                                    <p class="name">手塚番：我曾伺候過漫畫之神</p>
+                                    <p class="nt">NT$ <span class="price">266</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <a href="item.html">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/design2.jpg" alt="">
+                                    <p class="name">謎樣的清明上河圖</p>
+                                    <p class="nt">NT$ <span class="price">234</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/design3.jpg" alt="">
+                                <p class="name">梵谷兄弟</p>
+                                <p class="nt">NT$ <span class="price">332</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/design4.jpg" alt="">
+                                <p class="name">想清楚，寫明白</p>
+                                <p class="nt">NT$ <span class="price">285</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/design5.jpg" alt="">
+                                <p class="name">形式的起源</p>
+                                <p class="nt">NT$ <span class="price">294</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="9">
+                    <div class="title">
+                        <h2>有聲書</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="item.html">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/voice1.jpg" alt="">
+                                    <p class="name">【有聲課程】日本藏在細節裡</p>
+                                    <p class="nt">NT$ <span class="price">499</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/voice2.jpg" alt="">
+                                <p class="name">莫斯科紳士（有聲書）</p>
+                                <p class="nt">NT$ <span class="price">499</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/voice3.jpg" alt="">
+                                <p class="name">【經典文學有聲書套組】異鄉人、鼠疫、悉達多、德米安</p>
+                                <p class="nt">NT$ <span class="price">690</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/voice4.jpg" alt="">
+                                <p class="name">人間失格（有聲書）</p>
+                                <p class="nt">NT$ <span class="price">99</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/voice5.jpg" alt="">
+                                <p class="name">經濟學的40堂公開課（有聲書）</p>
+                                <p class="nt">NT$ <span class="price">380</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="10">
+                    <div class="title">
+                        <h2>外文書</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/book/lan1.jpg" alt="">
+                                    <p class="name">SPEED&TIME TRAVELER</p>
+                                    <p class="nt">NT$ <span class="price">70</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/lan2.jpg" alt="">
+                                <p class="name">How To Start a Freelance Business</p>
+                                <p class="nt">NT$ <span class="price">89</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/lan3.jpg" alt="">
+                                <p class="name">Visual Podcast</p>
+                                <p class="nt">NT$ <span class="price">88</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/lan4.jpg" alt="">
+                                <p class="name">Zoom Master</p>
+                                <p class="nt">NT$ <span class="price">109</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/book/lan5.jpg" alt="">
+                                <p class="name">Healthy Boundaries</p>
+                                <p class="nt">NT$ <span class="price">89</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top" src="icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+
+</html>

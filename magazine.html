@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雜誌 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0);
+        }
+
+        section a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 25%;
+            left: 5%;
+        }
+
+        .search {
+            width: 40%;
+            left: 25%;
+        }
+
+        .member {
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+
+        .cart {
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 35px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        .mc-icon {
+            margin-top: 40px;
+            font-size: 11px;
+        }
+
+        .hicon {
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+
+        .ms {
+            margin-right: 70px;
+        }
+
+        .ct {
+            margin-right: 85px;
+        }
+
+        .tha {
+            color: black;
+        }
+
+        .tha :hover {
+            color: rgb(201, 150, 56);
+        }
+
+        /*會員+購物車*/
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+
+        form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜尋框1*/
+        .bar1 input {
+            border: 2px solid black;
+        }
+
+        .bar1 button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*logo+搜尋引擎+會員專區+購物車*/
+        .bottom-header {
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+
+        .bh {
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+
+        .aboutus {
+            left: 5%;
+        }
+
+        .leaderboard {
+            left: 20%;
+        }
+
+        .book {
+            left: 35%;
+        }
+
+        .magazine {
+            left: 50%;
+        }
+
+        .comic {
+            left: 65%;
+        }
+
+        .novel {
+            left: 80%;
+        }
+
+        .bh:hover {
+            background-color: white;
+        }
+
+        .bh:hover h2 {
+            color: rgb(201, 150, 56);
+        }
+
+        .bh h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .section1 {
+            width: 85%;
+            height: auto;
+            margin: 50px auto 0 auto;
+        }
+
+        .main {
+            width: 85%;
+            height: 6200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section1 img {
+            width: 100%;
+        }
+
+        /**/
+        .section2 {
+            width: 85%;
+            height: 100%;
+            position: absolute;
+            left: 15%;
+            top: 0;
+        }
+
+        .sort {
+            height: 550px;
+        }
+
+        .title {
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 16px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .rec {
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        .rb {
+            position: absolute;
+            width: 20%;
+        }
+
+        .r1 {
+            left: 0;
+        }
+
+        .r2 {
+            left: 20%;
+        }
+
+        .r3 {
+            left: 40%;
+        }
+
+        .r4 {
+            left: 60%;
+        }
+
+        .r5 {
+            left: 80%;
+        }
+
+        .img {
+            text-align: center;
+        }
+
+        .rimg {
+            width: 88%;
+            height: 260px;
+            transition: transform 1s ease;
+        }
+
+        .rimg:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+        .name {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 20px;
+            color: rgb(179, 35, 35);
+        }
+
+        /**/
+        .s2_left {
+            width: 15%;
+            height: 600px;
+        }
+
+        /* Create a column layout with Flexbox */
+        .row {
+            position: fixed;
+            left: 5%;
+            bottom: 5%;
+            height: 500px;
+            display: flex;
+            width: 200px;
+        }
+
+        /* Left column (menu) */
+        .left {
+            flex: 35%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .left h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Style the search box */
+        #mySearch {
+            width: 100%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+
+        /* Style the navigation menu inside the left column */
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        #myMenu li a {
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+            display: block
+        }
+
+        #myMenu li {
+            height: 45px;
+        }
+
+        #myMenu li a:hover {
+            background-color: white;
+            color: rgb(201, 150, 56);
+            font-weight: bold;
+        }
+
+        /**/
+        .ad {
+            width: 49.5%;
+        }
+        .top{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /***/
+        .footer {
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form>
+                                <input type="text">
+                                <button type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="member.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ms" src="icon/profile-user.png" alt="素材">
+                            <h2>會員專區</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="cart.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ct" src="icon/shopping-cart.png" alt="素材">
+                            <h2>購物車</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section1">
+            <img src="picture/magazine/1.jpg" alt="">
+        </div>
+    </section>
+    <section>
+        <div class="main">
+            <div class="s2_left">
+                <div class="row">
+                    <div class="left" style="background-color:rgba(0, 0, 0, 0.8);">
+                        <h2>分類導覽</h2>
+                        <input class="ser" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.."
+                            title="Type in a category">
+                        <ul id="myMenu">
+                            <li><a href="#design">設計藝術</a></li>
+                            <li><a href="#fashion">流行時尚</a></li>
+                            <li><a href="#eco">財經企管</a></li>
+                            <li><a href="#food">旅遊美食</a></li>
+                            <li><a href="#edu">親子教育</a></li>
+                            <li><a href="#family">家庭生活</a></li>
+                            <li><a href="#history">人文史地</a></li>
+                            <li><a href="#news">新聞時事</a></li>
+                        </ul>
+                    </div>
+
+                    <script>
+                        function myFunction() {
+                            var input, filter, ul, li, a, i;
+                            input = document.getElementById("mySearch");
+                            filter = input.value.toUpperCase();
+                            ul = document.getElementById("myMenu");
+                            li = ul.getElementsByTagName("li");
+                            for (i = 0; i < li.length; i++) {
+                                a = li[i].getElementsByTagName("a")[0];
+                                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                    li[i].style.display = "";
+                                } else {
+                                    li[i].style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="section2">
+                <div class="sort">
+                    <!--最新雜誌-->
+                    <div class="title">
+                        <h2>最新雜誌</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/n1.jpg" alt="">
+                                <p class="name">BikeJIN/培倶人 2021年2月號 Vol.216 【日文版】</p>
+                                <p class="nt">NT$ <span class="price">181</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/n2.jpg" alt="">
+                                <p class="name">RIDERS CLUB 2021年2月號 No.562【日文版】</p>
+                                <p class="nt">NT$ <span class="price">212</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/n3.jpg" alt="">
+                                <p class="name">CLUTCH Magazine 2021年2月號 Vol.77【日文版】</p>
+                                <p class="nt">NT$ <span class="price">212</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/n4.jpg" alt="">
+                                <p class="name">親子天下雜誌 01月號/2021 第116期</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/n5.jpg" alt="">
+                                <p class="name">ALBA阿路巴高爾夫 國際中文版 01月號/2021 第73期</p>
+                                <p class="nt">NT$ <span class="price">180</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div class="sort">
+                    <!--人氣雜誌-->
+                    <div class="title">
+                        <h2>人氣雜誌</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/h1.jpg" alt="">
+                                <p class="name">經理人月刊01月號/2021 第194期</p>
+                                <p class="nt">NT$ <span class="price">200</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/h2.jpg" alt="">
+                                <p class="name">DEAR 12月號/2020 第24期</p>
+                                <p class="nt">NT$ <span class="price">150</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/h3.jpg" alt="">
+                                <p class="name">數位時代 01月號/2021 第320期</p>
+                                <p class="nt">NT$ <span class="price">150</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/h4.jpg" alt="">
+                                <p class="name">EMBA雜誌 01月號/2021 第413期</p>
+                                <p class="nt">NT$ <span class="price">175</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/h5.jpg" alt="">
+                                <p class="name">犢月刊-NO.95</p>
+                                <p class="nt">NT$ <span class="price">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="ad" src="picture/magazine/ad1.jpg" alt="">
+                <img class="ad" src="picture/magazine/ad2.jpg" alt="">
+                <div id="design" class="sort">
+                    <!--分類:設計藝術-->
+                    <div class="title">
+                        <h2>設計藝術</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <a href="">
+                                <div class="img">
+                                    <img class="rimg" src="picture/magazine/d1.jpg" alt="">
+                                    <p class="name">La Vie 01月號/2021 第201期</p>
+                                    <p class="nt">NT$ <span class="price">175</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/d2.jpg" alt="">
+                                <p class="name">典藏今藝術＆投資 01月號/2021 第340期</p>
+                                <p class="nt">NT$ <span class="price">120</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/d3.jpg" alt="">
+                                <p class="name">典藏古美術 01月號/2021 第340期</p>
+                                <p class="nt">NT$ <span class="price">120</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/d4.jpg" alt="">
+                                <p class="name">La Vie 12月號/2020 第200期</p>
+                                <p class="nt">NT$ <span class="price">175</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/d5.jpg" alt="">
+                                <p class="name">賞物誌 07 - 總匯號</p>
+                                <p class="nt">NT$ <span class="price">99</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="fashion" class="sort">
+                    <!--分類:流行時尚-->
+                    <div class="title">
+                        <h2>流行時尚</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/f1.jpg" alt="">
+                                <p class="name">bella儂儂 01月號/2021 第440期</p>
+                                <p class="nt">NT$ <span class="price">85</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/f2.jpg" alt="">
+                                <p class="name">Choc 恰女生 01月號/2021 第230期</p>
+                                <p class="nt">NT$ <span class="price">69</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/f3.jpg" alt="">
+                                <p class="name">marie claire美麗佳人 01月號/2021 第333期</p>
+                                <p class="nt">NT$ <span class="price">60</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/f4.jpg" alt="">
+                                <p class="name">bella儂儂 12月號/2020 第439期</p>
+                                <p class="nt">NT$ <span class="price">85</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/f5.jpg" alt="">
+                                <p class="name">ELLE 351期/2020年 12月號</p>
+                                <p class="nt">NT$ <span class="price">88</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="eco" class="sort">
+                    <!--分類:財經企管-->
+                    <div class="title">
+                        <h2>財經企管</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/e1.jpg" alt="">
+                                <p class="name">商業周刊 第1729期 2020/12/30</p>
+                                <p class="nt">NT$ <span class="price">99</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/e2.jpg" alt="">
+                                <p class="name">經理人月刊 01月號/2021 第194期</p>
+                                <p class="nt">NT$ <span class="price">200</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/e3.jpg" alt="">
+                                <p class="name">商業周刊 第1728期 2020/12/23</p>
+                                <p class="nt">NT$ <span class="price">99</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/e4.jpg" alt="">
+                                <p class="name">商業周刊 第1727期 2020/12/16</p>
+                                <p class="nt">NT$ <span class="price">99</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/e5.jpg" alt="">
+                                <p class="name">數位時代 12月號/2020 第319期</p>
+                                <p class="nt">NT$ <span class="price">135</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="food" class="sort">
+                    <!--分類:旅遊美食-->
+                    <div class="title">
+                        <h2>旅遊美食</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/t1.jpg" alt="">
+                                <p class="name">JapanWalker@HK 5期：絕景‧溫泉‧鐵道 人氣遊全集</p>
+                                <p class="nt">NT$ <span class="price">79</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/t2.jpg" alt="">
+                                <p class="name">走走台灣：恆春半島</p>
+                                <p class="nt">NT$ <span class="price">39</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/t3.jpg" alt="">
+                                <p class="name">JapanWalker@HK 4期：東北6縣冬雪物語</p>
+                                <p class="nt">NT$ <span class="price">79</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/t4.jpg" alt="">
+                                <p class="name">走走台灣：台東</p>
+                                <p class="nt">NT$ <span class="price">39</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/t5.jpg" alt="">
+                                <p class="name">TRAVELER luxe旅人誌 01月號/2021 第188期</p>
+                                <p class="nt">NT$ <span class="price">175</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="edu" class="sort">
+                    <!--分類:親子教育-->
+                    <div class="title">
+                        <h2>親子教育</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/edu1.jpg" alt="">
+                                <p class="name">親子天下雜誌 09月號/2020 第114期</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/edu2.jpg" alt="">
+                                <p class="name">媽媽寶寶 12月號/2020 第406期</p>
+                                <p class="nt">NT$ <span class="price">158</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/edu3.jpg" alt="">
+                                <p class="name">親子天下雜誌 05月號/2020 第112期</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/edu4.jpg" alt="">
+                                <p class="name">親子天下雜誌特刊33號 108課綱：學習＆升學全攻略</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/edu5.jpg" alt="">
+                                <p class="name">親子天下雜誌 07月號/2018 第101期</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="family" class="sort">
+                    <!--分類:家庭生活-->
+                    <div class="title">
+                        <h2>家庭生活</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/fa1.jpg" alt="">
+                                <p class="name">Anke安可人生雜誌第22期</p>
+                                <p class="nt">NT$ <span class="price">154</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/fa2.jpg" alt="">
+                                <p class="name">料理．台灣 11-12月號/2020第54期</p>
+                                <p class="nt">NT$ <span class="price">120</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/fa3.jpg" alt="">
+                                <p class="name">漂亮家居 11月號/2020 第237期</p>
+                                <p class="nt">NT$ <span class="price">139</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/fa4.jpg" alt="">
+                                <p class="name">Anke安可人生雜誌第21期</p>
+                                <p class="nt">NT$ <span class="price">154</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/fa5.jpg" alt="">
+                                <p class="name">料理．台灣 3-4月號/2020第50期</p>
+                                <p class="nt">NT$ <span class="price">120</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="history" class="sort">
+                    <!--分類:人文史地-->
+                    <div class="title">
+                        <h2>人文史地</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/his1.jpg" alt="">
+                                <p class="name">聯合文學 11月號 2020/第433期</p>
+                                <p class="nt">NT$ <span class="price">132</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/his2.jpg" alt="">
+                                <p class="name">文訊 12月號/2020 第422期</p>
+                                <p class="nt">NT$ <span class="price">119</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/his3.jpg" alt="">
+                                <p class="name">國家地理雜誌2020年11月號</p>
+                                <p class="nt">NT$ <span class="price">210</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/his4.jpg" alt="">
+                                <p class="name">聯合文學 12月號 2020/第434期</p>
+                                <p class="nt">NT$ <span class="price">165</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/his5.jpg" alt="">
+                                <p class="name">印刻文學生活誌 11月號/2020 第207期</p>
+                                <p class="nt">NT$ <span class="price">180</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="gray" size="1px" align="center" width="100%">
+                <div id="news" class="sort">
+                    <!--分類:新聞時事-->
+                    <div class="title">
+                        <h2>新聞時事</h2>
+                    </div>
+                    <div class="rec">
+                        <div class="rb r1">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/ne1.jpg" alt="">
+                                <p class="name">天下雜誌 第713期 2020/12/16</p>
+                                <p class="nt">NT$ <span class="price">180</span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="rb r2">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/ne2.jpg" alt="">
+                                <p class="name">天下雜誌《Crossing換日線》 冬季號/2020</p>
+                                <p class="nt">NT$ <span class="price">129</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r3">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/ne3.jpg" alt="">
+                                <p class="name">天下雜誌 第712期 2020/12/02</p>
+                                <p class="nt">NT$ <span class="price">150</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r4">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/ne4.jpg" alt="">
+                                <p class="name">天下雜誌 第714期 2020/12/30</p>
+                                <p class="nt">NT$ <span class="price">180</span></p>
+                            </div>
+                        </div>
+                        <div class="rb r5">
+                            <div class="img">
+                                <img class="rimg" src="picture/magazine/ne5.jpg" alt="">
+                                <p class="name">鏡週刊 第222期 2020/12/30</p>
+                                <p class="nt">NT$ <span class="price">75</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top" src="icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+
+</html>

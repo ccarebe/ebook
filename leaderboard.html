@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱銷排行榜 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 30%;
+            left: 5%;
+        }
+
+        .search {
+            width: 40%;
+            left: 25%;
+        }
+
+        .member {
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+
+        .cart {
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 35px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        .mc-icon {
+            margin-top: 40px;
+            font-size: 11px;
+        }
+
+        .hicon {
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+
+        .ms {
+            margin-right: 70px;
+        }
+
+        .ct {
+            margin-right: 85px;
+        }
+
+        .tha {
+            color: black;
+        }
+
+        .tha :hover {
+            color: rgb(201, 150, 56);
+        }
+
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+
+        form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜尋框1*/
+        .bar1 input {
+            border: 2px solid black;
+        }
+
+        .bar1 button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*logo+會員專區+購物車*/
+        .bottom-header {
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+
+        .bh {
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+
+        .aboutus {
+            left: 5%;
+        }
+
+        .leaderboard {
+            left: 20%;
+        }
+
+        .book {
+            left: 35%;
+        }
+
+        .magazine {
+            left: 50%;
+        }
+
+        .comic {
+            left: 65%;
+        }
+
+        .novel {
+            left: 80%;
+        }
+
+        .bh:hover {
+            background-color: white;
+        }
+
+        .bh:hover h2 {
+            color: black;
+        }
+
+        .bh h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .section1 {
+            position: relative;
+            margin-top: 50px;
+            width: 100%;
+            height: 600px;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+
+        .title {
+            color: rgba(0, 0, 0, 0.822);
+            font-size: 18px;
+            padding: 10px;
+            margin-left: 100px;
+        }
+
+        .board {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .hrb {
+            position: absolute;
+            width: 33.3%;
+            height: 400px;
+        }
+
+        .hr1 {
+            left: 0;
+            background-image: url(icon/number-1.png);
+        }
+
+        .hr2 {
+            left: 33.3%;
+            background-image: url(icon/number-2.png);
+        }
+
+        .hr3 {
+            left: 66.6%;
+            background-image: url(icon/number-3.png);
+        }
+
+        .hrimg {
+            width: 55%;
+            height: 310px;
+            transition: transform 1s ease;
+        }
+
+        .hrimg:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+        /*排行榜上層*/
+        .rec {
+            width: 80%;
+            height: 350px;
+            margin: 0 auto;
+            margin-top: 10px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .rb {
+            position: absolute;
+            width: 20%;
+        }
+
+        .r1 {
+            left: 0;
+        }
+
+        .r2 {
+            left: 20%;
+        }
+
+        .r3 {
+            left: 40%;
+        }
+
+        .r4 {
+            left: 60%;
+        }
+
+        .r5 {
+            left: 80%;
+        }
+
+        .rimg {
+            transition: transform 1s ease;
+            width: 75%;
+            height: 250px;
+            opacity: 0.6;
+        }
+
+        .rimg:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            opacity: 1;
+        }
+
+        /*排行榜下層*/
+        .img {
+            text-align: center;
+        }
+        .name {
+            width: 85%;
+            margin: 0 auto;
+        }
+        .price {
+            font-size: 20px;
+            color: rgb(179, 35, 35);
+        }
+        .top{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /**/
+        .footer {
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form>
+                                <input type="text">
+                                <button type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="member.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ms" src="icon/profile-user.png" alt="素材">
+                            <h2>會員專區</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="cart.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ct" src="icon/shopping-cart.png" alt="素材">
+                            <h2>購物車</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section1">
+            <div>
+                <div class="title">
+                    <h2>暢銷榜 | 書籍</h2>
+                </div>
+                <div class="board">
+                    <div class="hrb hr1">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/b1.jpg" alt="">
+                            <p class="name">大腦這樣記憶，什麼都學得會</p>
+                            <p class="nt">NT$ <span class="price">252</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr2">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/b2.jpg" alt="">
+                            <p class="name">原子習慣</p>
+                            <p class="nt">NT$ <span class="price">231</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr3">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/b3.jpg" alt="">
+                            <p class="name">謝謝你的指教</p>
+                            <p class="nt">NT$ <span class="price">290</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="rec">
+                <div class="rb r1">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/b4.jpg" alt="">
+                        <p class="name">北光</p>
+                        <p class="nt">NT$ <span class="price">308</span></p>
+                    </div>
+                </div>
+                <div class="rb r2">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/b5.jpg" alt="">
+                        <p class="name">神經外科的黑色喜劇</p>
+                        <p class="nt">NT$ <span class="price">264</span></p>
+                    </div>
+                </div>
+                <div class="rb r3">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/b6.jpg" alt="">
+                        <p class="name"></p>
+                        <p class="nt">NT$ <span class="price">188</span></p>
+                    </div>
+                </div>
+                <div class="rb r4">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/b7.jpg" alt="">
+                        <p class="name"></p>
+                        <p class="nt">NT$ <span class="price">265</span></p>
+                    </div>
+                </div>
+                <div class="rb r5">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/b8.jpg" alt="">
+                        <p class="name"></p>
+                        <p class="nt">NT$ <span class="price">294</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr color="gray" size="3px" align="center" width="90%">
+    </section>
+    <section>
+        <div class="section">
+            <div>
+                <div class="title">
+                    <h2>暢銷榜 | 雜誌</h2>
+                </div>
+                <div class="board">
+                    <div class="hrb hr1">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/m1.jpg" alt="">
+                            <p class="name">臺灣商品進大陸之攻守道</p>
+                            <p class="nt">NT$ <span class="price">99</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr2">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/m2.jpg" alt="">
+                            <p class="name">萬寶週刊 第1418期 2021/01/01</p>
+                            <p class="nt">NT$ <span class="price">220</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr3">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/m3.jpg" alt="">
+                            <p class="name">校園雜誌雙月刊2020年11、12月號</p>
+                            <p class="nt">NT$ <span class="price">110</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="rec">
+                <div class="rb r1">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/m4.jpg" alt="">
+                        <p class="name">效率快狠準的極簡工作術</p>
+                        <p class="nt">NT$ <span class="price">123</span></p>
+                    </div>
+                </div>
+                <div class="rb r2">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/m5.jpg" alt="">
+                        <p class="name">幼獅少年 01月號/2021 第531期</p>
+                        <p class="nt">NT$ <span class="price">160</span></p>
+                    </div>
+                </div>
+                <div class="rb r3">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/m6.jpg" alt="">
+                        <p class="name">速成Excel完勝爆量工作</p>
+                        <p class="nt">NT$ <span class="price">151</span></p>
+                    </div>
+                </div>
+                <div class="rb r4">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/m7.jpg" alt="">
+                        <p class="name">拒當下流老人，現在是關鍵</p>
+                        <p class="nt">NT$ <span class="price">94</span></p>
+                    </div>
+                </div>
+                <div class="rb r5">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/m8.jpg" alt="">
+                        <p class="name">映CG 09月號 / 2020: 場景概念設計</p>
+                        <p class="nt">NT$ <span class="price">125</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr color="gray" size="3px" align="center" width="90%">
+    </section>
+    <section>
+        <div class="section">
+            <div>
+                <div class="title">
+                    <h2>暢銷榜 | 漫畫</h2>
+                </div>
+                <div class="board">
+                    <div class="hrb hr1">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/c1.jpg" alt="">
+                            <p class="name">鬼滅之刃</p>
+                            <p class="nt">NT$ <span class="price">55</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr2">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/c2.jpg" alt="">
+                            <p class="name">排球少年</p>
+                            <p class="nt">NT$ <span class="price">55</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr3">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/c3.jpg" alt="">
+                            <p class="name">約定的夢幻島</p>
+                            <p class="nt">NT$ <span class="price">55</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="rec">
+                <div class="rb r1">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/c4.jpg" alt="">
+                        <p class="name">名偵探柯南</p>
+                        <p class="nt">NT$ <span class="price">69</span></p>
+                    </div>
+                </div>
+                <div class="rb r2">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/c5.jpg" alt="">
+                        <p class="name">地獄樂</p>
+                        <p class="nt">NT$ <span class="price">55</span></p>
+                    </div>
+                </div>
+                <div class="rb r3">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/c6.jpg" alt="">
+                        <p class="name">偶然</p>
+                        <p class="nt">NT$ <span class="price">10</span></p>
+                    </div>
+                </div>
+                <div class="rb r4">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/c7.jpg" alt="">
+                        <p class="name">進擊的巨人</p>
+                        <p class="nt">NT$ <span class="price">265</span></p>
+                    </div>
+                </div>
+                <div class="rb r5">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/c8.jpg" alt="">
+                        <p class="name">哆啦A夢 大合輯</p>
+                        <p class="nt">NT$ <span class="price">200</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr color="gray" size="3px" align="center" width="90%">
+    </section>
+    <section>
+        <div class="section">
+            <div>
+                <div class="title">
+                    <h2>暢銷榜 | 小說</h2>
+                </div>
+                <div class="board">
+                    <div class="hrb hr1">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/n1.jpg" alt="">
+                            <p class="name">關於我轉生變成史萊姆這檔事</p>
+                            <p class="nt">NT$ <span class="price">185</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr2">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/n2.jpg" alt="">
+                            <p class="name">無職轉生～到了異世界就拿出真本事～ </p>
+                            <p class="nt">NT$ <span class="price">185</span></p>
+                        </div>
+                    </div>
+                    <div class="hrb hr3">
+                        <div class="img">
+                            <img class="hrimg" src="picture/board/n3.jpg" alt="">
+                            <p class="name">特殊傳說Ⅱ：恆遠之晝篇</p>
+                            <p class="nt">NT$ <span class="price">196</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="rec">
+                <div class="rb r1">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/n4.jpg" alt="">
+                        <p class="name">小書痴的下剋上</p>
+                        <p class="nt">NT$ <span class="price">210</span></p>
+                    </div>
+                </div>
+                <div class="rb r2">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/n5.jpg" alt="">
+                        <p class="name">Re:從零開始的異世界生活</p>
+                        <p class="nt">NT$ <span class="price">132</span></p>
+                    </div>
+                </div>
+                <div class="rb r3">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/n6.jpg" alt="">
+                        <p class="name">魔王築城記！～最強迷宮是近代都市～</p>
+                        <p class="nt">NT$ <span class="price">149</span></p>
+                    </div>
+                </div>
+                <div class="rb r4">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/n7.jpg" alt="">
+                        <p class="name">魔法的若干種錯誤使用方式</p>
+                        <p class="nt">NT$ <span class="price">240</span></p>
+                    </div>
+                </div>
+                <div class="rb r5">
+                    <div class="img">
+                        <img class="rimg" src="picture/board/n8.jpg" alt="">
+                        <p class="name">特殊傳說Ⅱ：亙古潛夜篇</p>
+                        <p class="nt">NT$ <span class="price">175</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top" src="icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+
+</html>

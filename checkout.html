@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳櫃檯 | TheBook Life</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(245, 245, 245, 0.85);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 30%;
+            left: 5%;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 25px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        /*logo+搜尋引擎+會員專區+購物車*/
+        .main {
+            width: 70%;
+            height: auto;
+            margin: 30px auto;
+        }
+
+        .s1 {
+            position: relative;
+            padding: 15px 20px;
+            margin-top: 10px;
+            height: 200px;
+            background-color: white;
+        }
+
+        .s2 {
+            position: relative;
+            padding: 15px 20px;
+            margin-top: 10px;
+            height: 350px;
+            background-color: white;
+        }
+
+        .title {
+            font-weight: bold;
+            padding: 5px;
+            font-size: 25px;
+            border-bottom: black 1px dashed;
+        }
+
+        .tb {
+            width: 50%;
+            padding: 5px;
+            text-align: left;
+            font-size: 17px;
+        }
+
+        .com {
+            padding: 10px;
+            top: 35%;
+            right: 5%;
+            position: absolute;
+            width: 40%;
+            height: 110px;
+            border: 1px solid black;
+            font-size: 18px;
+        }
+
+        .pay {
+            padding: 5px;
+            font-size: 17px
+        }
+
+        .sel {
+            padding: 10px;
+        }
+
+        .see {
+            width: 300px;
+            height: 40px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 40px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(223, 137, 165);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="main">
+            <div class="s1">
+                <div class="title">
+                    <span>購物車明細 共 <span style="color: rgb(179, 35, 35);">2</span> 項商品</span>
+                </div>
+                <div class="tb">
+                    <table width="500">
+                        <tr>
+                            <th colspan="2">商品</th>
+                            <th>價格</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">焦慮的人</td>
+                            <td>NT$ 265</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black;">
+                            <td colspan="2">大腦這樣記憶，什麼都學得會</td>
+                            <td>NT$ 252</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="com">
+                    <table>
+                        <tr>
+                            <td>訂單小計：</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">574</span> 元</td>
+                        </tr>
+                        <tr>
+                            <td>促銷折抵：</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">57</span> 元</td>
+                        </tr>
+                        <tr>
+                            <td>訂單總計</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">517</span> 元</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="s1">
+                <div class="title">
+                    <span>選擇付款方式</span>
+                </div>
+                <div class="pay">
+                    <form action="">
+                        <input type="radio" name="pay" checked />信用卡
+                        <br>
+                        <input type="radio" name="pay" />Paypal（限非台灣註冊之帳戶）
+                        <br>
+                        <input type="radio" name="pay" />ATM轉帳
+                        <br>
+                        <input type="radio" name="pay" />超商代收
+                        <br>
+                        <input type="radio" name="pay" />WebATM（請備妥晶片、讀卡機）
+                    </form>
+                </div>
+            </div>
+            <div class="s2">
+                <div class="title">
+                    <span>電子發票資訊</span>
+                </div>
+                <div class="sel">
+                    <span style="color: rgb(179, 35, 35);font-weight: bold;">
+                        ※ 您的發票預設為電子發票託管，若中獎我們將於月底發出E-mail通知並以掛號方式把中獎發票寄給您
+                    </span>
+                </div>
+                <div class="sel">
+                    <form action="">
+                        <select class="see" size="1" name="sport">
+                            <option>二聯式電子發票(存入會員帳號)</option>
+                            <option>二聯式電子發票(手機條碼載具)</option>
+                            <option>二聯式電子發票(自然人憑證載具)</option>
+                            <option>二聯式電子發票(紙本證明聯)</option>
+                            <option>三聯式電子發票</option>
+                            <option>發票捐贈</option>
+                        </select>
+                        <br><br><br>
+                        <input type="checkbox" name="interest" checked />儲存發票資訊
+                    </form>
+                    <br><br><br>
+                    <input class="btn" type="submit" name="" value="完成付款" onclick="self.location.href='index.html'">
+                    <br>
+                    <span style="font-size: 14px;">按下確定付款即表示同意辦理退貨時，由 TheBook Life 電子書代為處理發票及銷貨退回證明單，以加速退貨退款作業。</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

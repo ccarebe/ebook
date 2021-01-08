@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0);
+        }
+
+        section a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        .header {
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+
+        .top-header {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .th {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 25%;
+            left: 5%;
+        }
+
+        .search {
+            width: 40%;
+            left: 25%;
+        }
+
+        .member {
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+
+        .cart {
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+
+        .logo-icon {
+            margin: 50px;
+            margin-top: 35px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-icon h1 {
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+
+        .mc-icon {
+            margin-top: 40px;
+            font-size: 11px;
+        }
+
+        .hicon {
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+
+        .ms {
+            margin-right: 70px;
+        }
+
+        .ct {
+            margin-right: 85px;
+        }
+
+        .tha {
+            color: black;
+        }
+
+        .tha :hover {
+            color: rgb(201, 150, 56);
+        }
+
+        /*會員+購物車*/
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+
+        .form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+
+        .input,
+        .button {
+            border: none;
+            outline: none;
+        }
+
+        .input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        .button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜尋框1*/
+        .bar1 input {
+            border: 2px solid black;
+        }
+
+        .bar1 button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*logo+搜尋引擎+會員專區+購物車*/
+        .bottom-header {
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+
+        .bh {
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+
+        .aboutus {
+            left: 5%;
+        }
+
+        .leaderboard {
+            left: 20%;
+        }
+
+        .book {
+            left: 35%;
+        }
+
+        .magazine {
+            left: 50%;
+        }
+
+        .comic {
+            left: 65%;
+        }
+
+        .novel {
+            left: 80%;
+        }
+
+        .bh:hover {
+            background-color: white;
+        }
+
+        .bh:hover h2 {
+            color: rgb(201, 150, 56);
+        }
+
+        .bh h2 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .main {
+            margin: 80px auto 0 auto;
+            width: 70%;
+            height: auto;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .title {
+            text-align: left;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed black;
+        }
+
+        .d1 {
+            position: absolute;
+            width: 32%;
+            top: 30%;
+            height: 150px;
+            border: 2px solid rgba(245, 245, 245, 0.85);
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .s {
+            left: 34%;
+        }
+
+        .t {
+            left: 67%;
+        }
+
+        .accordion img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: -20px;
+        }
+
+        .accordion {
+            background-color: rgb(201, 150, 56);
+            color: rgba(0, 0, 0, 0.726);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            margin-top: 10px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            border: black 3px solid;
+            border-radius: 0px;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+
+        .panel {
+            width: 100%;
+            height: 420px;
+            padding: 1%;
+            display: none;
+            background-color: white;
+            border: black 3px solid;
+            overflow: hidden;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .table {
+            position: relative;
+            margin: 0 auto;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .tite {
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .edit {
+            position: absolute;
+            background-color: rgb(216, 176, 101);
+            border: none;
+            width: 80px;
+            height: 30px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            right: 5%;
+        }
+
+        .sut {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.685);
+            border: none;
+            width: 80px;
+            height: 30px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            left: 32%;
+        }
+
+        /**/
+        .pm {
+            height: 130px;
+            background-color: white;
+            padding-left: 150px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+        }
+
+        .tb {
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .qa {
+            padding: 10px;
+            width: 95%;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .set {
+            width: 20%;
+            margin: 80px auto 50px auto;
+        }
+
+        .btn {
+            width: 100%;
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .top{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /**/
+        .footer {
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            color: black;
+            padding: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon ebook" src="icon/open-book.png" alt="素材">
+                            <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form class="form">
+                                <input class="input" type="text">
+                                <button class="button" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="member.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ms" src="icon/profile-user.png" alt="素材">
+                            <h2>會員專區</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="cart.html" class="tha">
+                        <div class="mc-icon">
+                            <img class="hicon ct" src="icon/shopping-cart.png" alt="素材">
+                            <h2>購物車</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="main">
+            <div class="title">
+                <span
+                    style="font-size: 30px;font-weight: bold;border-bottom: white 1px solid; padding-bottom: 12px;">Hello!
+                    Mandy , welcome to TheBook Life</span>
+            </div>
+            <div>
+                <button class="accordion">
+                    <img src="icon/user-profile.png" alt="">
+                    <h2>會員資料</h2>
+                </button>
+                <div class="panel">
+                    <div class="tite">
+                        <span>會員資料 | 會員資料修改</span>
+                    </div>
+                    <div class="table">
+                        <form action="" class="form">
+                            <table width="1000" height="300">
+                                <tr>
+                                    <td>姓名</td>
+                                    <td>陳*美</td>
+                                </tr>
+                                <tr>
+                                    <td>生日</td>
+                                    <td>2020/01/01</td>
+                                </tr>
+                                <tr>
+                                    <td>證件號碼</td>
+                                    <td>A1234***89</td>
+                                </tr>
+                                <tr>
+                                    <td>性別</td>
+                                    <td>
+                                        <input class="radio" type="radio" name="sex" />男
+                                        <input class="radio" type="radio" name="sex" checked />女
+                                        <input class="radio" type="radio" name="sex" />不提供
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail</td>
+                                    <td>
+                                        <input type="text" name="" id="" value="a1234567@gmail.com"
+                                            style="padding: 5px;" size="50px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>行動電話</td>
+                                    <td>
+                                        <input type="text" size="12px" style="padding: 5px;" value="+886(台灣)">
+                                        <input type="text" name="" id="" size="31px" style="padding: 5px;"
+                                            value="09123456678">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>居住地</td>
+                                    <td>
+                                        <input class="radio" type="radio" name="country" checked />台灣
+                                        <input class="radio" type="radio" name="country" />大陸
+                                        <input class="radio" type="radio" name="country" />香港
+                                        <input class="radio" type="radio" name="country" />其他
+                                    </td>
+                                </tr>
+                            </table>
+                            <input class="edit" type="submit" value="確認" />
+                        </form>
+                    </div>
+                </div>
+
+                <button class="accordion"><img src="icon/checklist.png" alt="">
+                    <h2>訂單查詢</h2>
+                </button>
+                <div class="panel">
+                    <div class="pm">
+                        <p>親愛的會員 陳小美 您好，</p>
+                        <p>這是您 <span style="color: palevioletred;">2020/01/06~2021/01/06</span> 的交易記錄清單：</p>
+                        <p>提醒您，本頁面提供您 最近一年內 的消費記錄，如需更詳細的消費記錄，請 <a href="#service"
+                                style="color: rgb(82, 80, 184);">連絡客服。</a></p>
+                    </div>
+                    <div class="tb">
+                        <table width="80%" height="200px">
+                            <tr>
+                                <th>商品</th>
+                                <th>日期</th>
+                                <th>金額</th>
+                                <th>評分</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="book" value="書" />Book1
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="book" value="書" />Book2
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="book" value="書" />Book3
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="service">
+                    <button class="accordion"><img src="icon/call-center-agent.png" alt="">
+                        <h2>客服專區</h2>
+                    </button>
+                    <div class="panel">
+                        <div class="qa" style="font-weight: bold;">
+                            <span>親愛的會員您好，我們很重視您的提問，請完整輸入下方欄位，我們會儘速處理您的問題：</span><br>
+                            <form class="fore" action="">
+                                <table height="320">
+                                    <tr>
+                                        <td><span style="color: red;">*</span> 姓名</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="color: red;">*</span> Email</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>連絡電話</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>訂單編號</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="color: red;">*</span> 問題類型</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="color: red;">*</span> 問題內容</td>
+                                        <td><textarea name="" id="" cols="35" rows="5"></textarea></td>
+                                    </tr>
+                                </table>
+                                <input class="sut" type="submit" value="送出" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.display === "block") {
+                                panel.style.display = "none";
+                            } else {
+                                panel.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="set">
+            <input class="btn" type="submit" name="" value="登出" onclick="self.location.href='member.html'">
+        </div>
+    </section>
+    <a href="#home"><img class="top" src="icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+
+</html>
