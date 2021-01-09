@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大師輕鬆讀 NO.803 從A到A+ - 大師輕鬆讀編譯小組 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0 auto;
+        }
+        a {
+            text-decoration:none;
+            color: black;
+        }
+        .header{
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+        .top-header{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .th{
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        .logo{
+            width: 30%;
+            left: 5%;
+        }
+        .search{
+            width: 40%;
+            left: 25%;
+        }
+        .member{
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+        .cart{
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+        .logo-icon{
+            margin: 50px;
+            margin-top: 35px;
+        }
+        .icon{
+            width: 60px;
+            height: 60px;
+        }
+        .logo-icon h1{
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+        .mc-icon{
+            margin-top: 40px;
+            font-size: 11px;
+        }
+        .hicon{
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+        .ms{
+            margin-right: 70px;
+        }
+        .ct{
+            margin-right: 85px;
+        }
+        .tha{
+            color: black;
+        }
+        .tha :hover{
+            color: rgb(201, 150, 56);
+        }
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+        .form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+        .input, button,.submit {
+            border: none;
+            outline: none;
+        }
+        .input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+        .button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+        /*搜尋框1*/
+        .bar1 .input {
+            border: 2px solid black;
+        }
+        .bar1 .button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+        .bar1 .button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+        /*logo+會員專區+購物車*/
+        .bottom-header{
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+        .bh{
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+        
+        .leaderboard {
+            left: 5%;
+        }
+
+        .book {
+            left: 20%;
+        }
+
+        .magazine {
+            left: 35%;
+        }
+
+        .comic {
+            left: 50%;
+        }
+
+        .novel {
+            left: 65%;
+        }
+
+        .aboutus {
+            left: 80%;
+        }
+
+        .bh:hover{
+            background-color: white;
+        }
+        .bh:hover h2{
+            color: black;
+        }
+        .bh h2{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .top{
+            position: relative;
+            margin: 50px auto;
+            width: 80%;
+            height: 1800px;
+        }
+        .left{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 53%;
+            height: 700px;
+        }
+        .right{
+            position: absolute;
+            top: 100px;
+            left: 53%;
+            width: 47%;
+            height: 700px;
+        }
+        .container{
+            margin: 0 auto;
+            width: 65%;
+        }
+        /*商品圖片*/
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+        /*商品圖片*/
+        .title{
+            margin-bottom: 20px;
+        }
+        .t1{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .t2{
+            font-weight: bold;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .t3_1,.t3_2{
+            font-weight: bold;
+            color: rgb(179, 35, 35);
+        }
+        .t3_2{
+            font-size: 35px;
+        }
+        .intro,.detail{
+            margin: 5% auto;
+        }
+        .i2{
+            font-weight: bolder;
+        }
+        /**/
+        .btn_all{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .btn{
+            height: 40px;
+            color: rgb(179, 35, 35);
+            background-color: white;
+            border: rgb(179, 35, 35) 1px solid;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .b1{
+            width: 20%;
+        }
+        .b2,.b3{
+            width: 39%;
+        }
+        .b3{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b1:hover,.b2:hover{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b3:hover{
+            background-color: rgb(143, 27, 27);
+        }
+        /**/
+        .d1{
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0)
+        }
+        .d2{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        /**/
+        .rating {
+            font-size: 0;
+            display: table;
+        }
+
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        .rating > label:before {
+            padding: 3px;
+            font-size: 30px;
+            line-height: 1em;
+            display: inline-block;
+            content: "★";
+        }
+
+        .rating > input:checked ~ label,
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            opacity: 0.5;
+        }
+        /**/
+        .score,.discuss{
+            width: 80%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .ratings {
+            vertical-align: middle;
+            position: relative;
+            display: inline-block;
+            color: #ddd; /*背景星星顏色*/
+            overflow: hidden;
+            font-size: 30px; /*調整字體大小可放大縮小星星*/
+        }
+        .full_star {
+            width: 80%; /*調整寬度可變更星等*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFD700; /*前景星星顏色*/
+        }
+        .dis{
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .dis1{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            
+        }
+        .dis2{
+            position: absolute;
+            top: 10%;
+            height: 30%;
+            width: 100%;
+            font-weight: bold;
+        }
+        .dis3{
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 60%;
+            padding: 10px;
+            background-color: rgba(221, 221, 221, 0.692);
+            border: black 1px solid;
+            border-radius: 5px;
+        }
+        .submit{
+            position: relative;
+            margin-left: 79%;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            width: 55px;
+            height: 23px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .user_icon{
+            width: 25px;
+            height: 25px;
+            vertical-align: text-bottom;
+        }
+        .top1{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /*完讀書評*/
+        .footer{
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="../index.html">
+                    <div class="logo-icon">
+                        <img class="icon ebook" src="../icon/open-book.png" alt="素材">
+                        <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                    </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form class="form">
+                                <input class="input" type="text">
+                                <button class="button" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="../member.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ms" src="../icon/profile-user.png" alt="素材">
+                        <h2>會員專區</h2>
+                    </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="../cart.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ct" src="../icon/shopping-cart.png" alt="素材">
+                        <h2>購物車</h2>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="../about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="../leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="../book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="../magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="../comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="../novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="top">
+            <div class="left">
+                <div class="container">
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="img" src="../picture/m1.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img class="img" src="../picture/m1.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="img" src="../picture/m1.jpg" style="width:100%">
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                
+                        // Next/previous controls
+                        function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                        }
+                
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                        }
+                
+                        function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " active";
+                        }
+                    </script>
+                </div>
+                <br><br><br>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="score">
+                    <span class="d1">我的評分</span><br><br>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" hidden/>
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4" hidden/>
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3" hidden/>
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2" hidden/>
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1" hidden/>
+                        <label for="star1"></label>
+                    </div>
+                    <form action="">
+                        書評標題:<br><input class="dis" type="text" size="59"><br>
+                        書評內文:<br><textarea class="dis" name="" id="" cols="55" rows="6"></textarea><br>
+                        <input class="submit" type="submit" value="送出">
+                    </form>
+                </div>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="discuss">
+                    <span class="d1">完讀書評<br><br></span>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Sandy寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>我覺得這本書很棒!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span class="t1">大師輕鬆讀 NO.803 從A到A+<br></span>
+                    <span class="t2"></span>
+                    
+                    <div class="ratings">
+                        <div class="empty_star">★★★★★</div>
+                        <div class="full_star">★★★★★</div>
+                    </div>
+                    <br>
+                    <span class="t3_1">NT$</span><span class="t3_2">90</span><br><br>
+                    <span class="t4">
+                        作者： 大師輕鬆讀編譯小組<br> 
+                        出版社：大師輕鬆讀股份有限公司<br> 
+                        出版日期：2020/12/30
+                    </span>
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="intro">
+                    <span class="i2">
+                        大師輕鬆讀 NO.803 從A到A+｜中英對照<br>
+                        優秀到卓越的最佳路徑<br>
+                        Good to Great <br>
+                        Why Some Companies Make the Leap and Others Don't <br>
+                        <br>
+                        原書作者：詹姆．柯林斯（Jim Collins）
+                    </span>
+                    <br><br>
+                </div>
+                <div class="btn_all">
+                    <input class="btn b1 input" type="button" value="♡ 收藏" onclick="self.location.href='../member.html'">
+                    <input class="btn b2 input" type="button" value="加入購物車">
+                    <input class="btn b3 input" type="button" value="直接購買" onclick="self.location.href='../member.html'">
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="detail">
+                    <span class="d1">詳細書訊<br><br></span>
+                    <span>
+                        重點導讀 優秀到卓越的最佳路徑<br>
+                        「優秀」是「卓越」的敵人。成功就好了、夠好就好了，為什麼一定要追求卓越？如果你也是這麼想，那麼，你可能要先思考的是：「什麼工作使你覺得一定要成就卓越？」
+                        <br><br>
+                        Concept 1 有紀律的員工：第5級領導<br>
+                        卓越企業的領導人都不是愛出風頭的名人。相反地，卓越企業的執行長大多來自公司內部某個部門，他們擁有一種予盾的個人特質，混合了謙卑的個性和專業的堅持。而且他們通常會將他們的成就歸功於運氣，而不是個人的卓越表現。
+                        <br><br>
+                        Concept 2 有紀律的員工：先找人再謀事<br>
+                        從A到A+的轉變關鍵不是設定正確的目標，而是將重點放在讓正確的人加入，然後由他們去釐清最重要的目標應該是什麼。愈多有衝勁、有技術的人加入團隊愈好。
+                        <br><br>
+                        Concept 3 有紀律的思考：面對真相<br>
+                        A到A+的企業坦然面對市場競爭的事實，但他們努力經營，從不懷疑自己到最後一定能、而且必須出人頭地。誠實及坦率使得這些企業在向前邁進時做出正確的決策，而不是扭曲事實。
+                        <br><br>
+                        Concept 4 有紀律的思考：刺蝟原則<br>
+                        刺蝟相對來說算是比較小型的動物，牠們只知道一件大事，然後專心一致處理它。A到A+企業也是如此──他們堅持做自己擅長的事，不會分心去接觸遠離自己核心能耐的新商業領域。
+                        <br><br>
+                        Concept 5 有紀律的行動：紀律的文化<br>
+                        有了有紀律的員工就不需要階級制度。同樣地，有了有紀律的思考就不需要官僚制度，因為有紀律的行動不需要多餘的管控。A到A+企業結合了有紀律的文化和企業道德，因而產生真正卓越的市場績效
+                        <br><br>
+                        Concept 6 有紀律的行動：科技加速器<br>
+                        A到A+企業不會被新興科技風潮帶走，他們反而會將科技和刺蝟原則連結起來──也就是說，只有在科技能加速提升他們在熱愛的領域的績效、達到世界頂尖的水準以及賺錢獲利時，他們才會採用新科技。
+                        <br><br>
+                        延伸閱讀 鋼鐵般的紀律<br>
+                        乍看之下很容易認為，面對動盪不安的市場，公司想要茁壯成長，就必須隨時快速應變，抓緊新的市場機會、屢屢追上市場的下一波浪潮。但事實並非如此。
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        ※ 媒體推薦
+                    </span>
+                    <br><br>
+                    <span>
+                        ★ 管理大師彼得．杜拉克等名人推薦<br>
+                        ★ 全球銷售超過2200萬冊經典鉅作
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top1" src="../icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謝謝你的指教 : 哈佛溝通專家教你轉化負面意見，成就更好的自己-道格拉斯．史東、席拉．西恩 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0 auto;
+        }
+        a {
+            text-decoration:none;
+            color: black;
+        }
+        .header{
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+        .top-header{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .th{
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        .logo{
+            width: 30%;
+            left: 5%;
+        }
+        .search{
+            width: 40%;
+            left: 25%;
+        }
+        .member{
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+        .cart{
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+        .logo-icon{
+            margin: 50px;
+            margin-top: 35px;
+        }
+        .icon{
+            width: 60px;
+            height: 60px;
+        }
+        .logo-icon h1{
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+        .mc-icon{
+            margin-top: 40px;
+            font-size: 11px;
+        }
+        .hicon{
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+        .ms{
+            margin-right: 70px;
+        }
+        .ct{
+            margin-right: 85px;
+        }
+        .tha{
+            color: black;
+        }
+        .tha :hover{
+            color: rgb(201, 150, 56);
+        }
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+        .form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+        .input, button,.submit {
+            border: none;
+            outline: none;
+        }
+        .input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+        .button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+        /*搜尋框1*/
+        .bar1 .input {
+            border: 2px solid black;
+        }
+        .bar1 .button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+        .bar1 .button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+        /*logo+會員專區+購物車*/
+        .bottom-header{
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+        .bh{
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+        
+        .leaderboard {
+            left: 5%;
+        }
+
+        .book {
+            left: 20%;
+        }
+
+        .magazine {
+            left: 35%;
+        }
+
+        .comic {
+            left: 50%;
+        }
+
+        .novel {
+            left: 65%;
+        }
+
+        .aboutus {
+            left: 80%;
+        }
+
+        .bh:hover{
+            background-color: white;
+        }
+        .bh:hover h2{
+            color: black;
+        }
+        .bh h2{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .top{
+            position: relative;
+            margin: 50px auto;
+            width: 80%;
+            height: 2100px;
+        }
+        .left{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 53%;
+            height: 700px;
+        }
+        .right{
+            position: absolute;
+            top: 100px;
+            left: 53%;
+            width: 47%;
+            height: 700px;
+        }
+        .container{
+            margin: 0 auto;
+            width: 65%;
+        }
+        /*商品圖片*/
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+        /*商品圖片*/
+        .title{
+            margin-bottom: 20px;
+        }
+        .t1{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .t2{
+            font-weight: bold;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .t3_1,.t3_2{
+            font-weight: bold;
+            color: rgb(179, 35, 35);
+        }
+        .t3_2{
+            font-size: 35px;
+        }
+        .intro,.detail{
+            margin: 5% auto;
+        }
+        .i2{
+            font-weight: bolder;
+        }
+        /**/
+        .btn_all{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .btn{
+            height: 40px;
+            color: rgb(179, 35, 35);
+            background-color: white;
+            border: rgb(179, 35, 35) 1px solid;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .b1{
+            width: 20%;
+        }
+        .b2,.b3{
+            width: 39%;
+        }
+        .b3{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b1:hover,.b2:hover{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b3:hover{
+            background-color: rgb(143, 27, 27);
+        }
+        /**/
+        .d1{
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0)
+        }
+        .d2{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        /**/
+        .rating {
+            font-size: 0;
+            display: table;
+        }
+
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        .rating > label:before {
+            padding: 3px;
+            font-size: 30px;
+            line-height: 1em;
+            display: inline-block;
+            content: "★";
+        }
+
+        .rating > input:checked ~ label,
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            opacity: 0.5;
+        }
+        /**/
+        .score,.discuss{
+            width: 80%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .ratings {
+            vertical-align: middle;
+            position: relative;
+            display: inline-block;
+            color: #ddd; /*背景星星顏色*/
+            overflow: hidden;
+            font-size: 30px; /*調整字體大小可放大縮小星星*/
+        }
+        .full_star {
+            width: 80%; /*調整寬度可變更星等*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFD700; /*前景星星顏色*/
+        }
+        .dis{
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .dis1{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            
+        }
+        .dis2{
+            position: absolute;
+            top: 10%;
+            height: 30%;
+            width: 100%;
+            font-weight: bold;
+        }
+        .dis3{
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 60%;
+            padding: 10px;
+            background-color: rgba(221, 221, 221, 0.692);
+            border: black 1px solid;
+            border-radius: 5px;
+        }
+        .submit{
+            position: relative;
+            margin-left: 79%;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            width: 55px;
+            height: 23px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .user_icon{
+            width: 25px;
+            height: 25px;
+            vertical-align: text-bottom;
+        }
+        .top1{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /*完讀書評*/
+        .footer{
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="../index.html">
+                    <div class="logo-icon">
+                        <img class="icon ebook" src="../icon/open-book.png" alt="素材">
+                        <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                    </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form class="form">
+                                <input class="input" type="text">
+                                <button class="button" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="../member.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ms" src="../icon/profile-user.png" alt="素材">
+                        <h2>會員專區</h2>
+                    </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="../cart.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ct" src="../icon/shopping-cart.png" alt="素材">
+                        <h2>購物車</h2>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="../about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="../leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="../book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="../magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="../comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="../novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="top">
+            <div class="left">
+                <div class="container">
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="img" src="../picture/board/b3.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img class="img" src="../picture/board/b3.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="img" src="../picture/board/b3.jpg" style="width:100%">
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                
+                        // Next/previous controls
+                        function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                        }
+                
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                        }
+                
+                        function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " active";
+                        }
+                    </script>
+                </div>
+                <br><br><br>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="score">
+                    <span class="d1">我的評分</span><br><br>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" hidden/>
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4" hidden/>
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3" hidden/>
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2" hidden/>
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1" hidden/>
+                        <label for="star1"></label>
+                    </div>
+                    <form action="">
+                        書評標題:<br><input class="dis" type="text" size="59"><br>
+                        書評內文:<br><textarea class="dis" name="" id="" cols="55" rows="6"></textarea><br>
+                        <input class="submit" type="submit" value="送出">
+                    </form>
+                </div>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="discuss">
+                    <span class="d1">完讀書評<br><br></span>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Sandy寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>我覺得這本書很棒!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span class="t1">謝謝你的指教<br></span>
+                    <span class="t2">
+                        哈佛溝通專家教你轉化負面意見，成就更好的自己<br>
+                        Thanks for the Feedback : The Science and Art of Receiving Feedback Well <br>
+                    </span>
+                    
+                    <div class="ratings">
+                        <div class="empty_star">★★★★★</div>
+                        <div class="full_star">★★★★★</div>
+                    </div>
+                    <br>
+                    <span class="t3_1">NT$</span><span class="t3_2">290</span><br><br>
+                    <span class="t4">
+                        作者： 道格拉斯．史東、席拉．西恩<br> 
+                        譯者： 朱崇旻<br>
+                        出版社：先覺出版<br> 
+                        出版日期：2021/01/01
+                    </span>
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="intro">
+                    <span class="i2">
+                        哈佛大學溝通專家25年經典代表作<br>
+                        美國亞馬遜書店長銷書，重量級大師推崇必學的基本功<br>
+                        讀者★★★★★熱烈迴響：「這本書可能會改變你的人生！」<br>
+                    </span>
+                    <br>
+                </div>
+                <div class="btn_all">
+                    <input class="btn b1 input" type="button" value="♡ 收藏" onclick="self.location.href='../member.html'">
+                    <input class="btn b2 input" type="button" value="加入購物車">
+                    <input class="btn b3 input" type="button" value="直接購買" onclick="self.location.href='../member.html'">
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="detail">
+                    <span class="d1">詳細書訊<br><br></span>
+                    <span class="d2">
+                        在這個人人都想給你指教的時代── <br><br>
+                    </span>
+                    <span>
+                        各界回饋都要聽？接受批評指教難如登天？<br>
+                        轉化棘手對話的獨門心法，把錯誤、不公平與讓人感覺很差的建言，都變成你學習與成長的能量！
+                        <br><br>
+                        EQ大師丹尼爾．高爾曼、《第五項修練》管理大師彼得．聖吉、
+                        《給予》華頓商學院教授亞當．葛蘭特、哈佛商學院教授艾美．艾德蒙森、
+                        可口可樂公司前學習長、時代華納董事 ── 一致推崇
+                    </span><br><br>
+                    <span class="d2">
+                        接受「批評指教」，是一件值得投入心力練習的事！
+                    </span>
+                    <br><br>
+                    <span>
+                        每一年，全球共有825萬小時（＝9.4萬年）用於準備與進行年度績效考核。<br>
+                        數千萬的學生要以學測成績去面對各大學或褒或貶的判決。<br>
+                        每一天，你在網路上發表的任何文字、照片、影片，隨時要面臨各種好評或負評……<br>
+                        <br>
+                        我們活在一個隨時都在接受「批評指教」的世界，而你能夠選擇的是：<br>
+                        □ 被批評指教惹惱，淹沒在各種情緒裡<br>
+                        ■ 刻意花心思練習接受指教，從中挖掘可據為己用的成長金鑰<br>
+                        <br>
+                        上司、同事、客戶，或者家人、朋友、伴侶，都會對我們提供「建議」。這些指教、回饋對於建立健康的人際關係或職涯發展，都是不可或缺的。然而，面對「批評指教」，我們常常是害怕、抗拒、反彈、躲避，原因有時是難堪，有時是指教的人令你厭惡（典型的「對人不對事」），還有些時候是我們感覺被否定了。
+                        <br>
+                        本書兩位作者在哈佛大學教授談判與高難度溝通超過20年，從白宮到許多高衝突場域都仰賴他們的專業建議。執教多年來，兩人深深體會到，「接受批評指教」的方法，是最值得投入心力去刻意練習、最能幫助每個人自我提升的實用技巧。書中以豐富案例與清晰指引，帶你面對直白的批評、殘酷的年度績效考核，或是不請自來的建議，甚至能學會為自己設下界線，重新主導人生。
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        本書將幫助你── <br><br>
+                    </span>
+                    <span>
+                        ◆理解為何接受回饋是如此重要，卻又充滿挑戰性？【破解扭曲回饋的三大機制】<br>
+                        ◆學會真正理解給予建議的人看見了什麼？【願聞其詳的力量】<br>
+                        ◆如何針對他人的批評指教進行高難度對話，找出自己成長學習的路徑？【從定型自我轉化成學習型自我】
+                    </span><br><br>
+                    <span class="d2">
+                        作者：哈佛法學院溝通專家／道格拉斯．史東（Douglas Stone）、席拉．西恩（Sheila Heen）
+                    </span>
+                    <br><br>
+                    <span>
+                        道格拉斯．史東與席拉．西恩是三合管理顧問集團（Triad Consulting Group）共同創辦人，服務的客戶包括白宮、花旗集團、豐田汽車、嬌生公司、時代華納公司、聯合利華、波士頓地區性侵害危機中心等機構。他們曾合著紐約時報暢銷書《再也沒有難談的事：哈佛法學院教你如何開口，解決切身的大小事》。
+                        <br><br>
+                        史東長期在哈佛大學法學院教授談判學，曾任該校「哈佛談判專案中心」副主任。西恩過去二十五年來，也在哈佛法學院談判專案中心鑽研談判理論與操作，尤其針對高情緒張力、緊張關係這個領域。此外，她也擔任聯邦儲備銀行、新加坡最高法院的諮詢專家，最著名的談判案例為調解當代神學家對於「神是否為真」的紛雜意見。
+                        <br><br>
+                        史東現居劍橋，西恩則和丈夫與三個孩子住在劍橋北方一間農舍。
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        譯者：朱崇旻
+                    </span>
+                    <br>
+                    <span>
+                        曾在美國居住九年，畢業於臺灣大學生化科技系，是以小說為食的謎樣生物，時時尋覓下一本好書。喜歡翻譯時推敲琢磨的過程，並認為無論是什麼題材的書，譯者都應該忠實傳達作者的立場。興趣包含寫小說、武術、室內布置和冬眠。譯有《深井效應》《深度工作力》《五杯酒》等書。
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top1" src="../icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+</html>

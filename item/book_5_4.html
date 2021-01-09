@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文青這種生物，自古就有 : 17段隱藏在史籍和作品背後的奇葩人生-江仲淵 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0 auto;
+        }
+        a {
+            text-decoration:none;
+            color: black;
+        }
+        .header{
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+        .top-header{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .th{
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        .logo{
+            width: 30%;
+            left: 5%;
+        }
+        .search{
+            width: 40%;
+            left: 25%;
+        }
+        .member{
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+        .cart{
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+        .logo-icon{
+            margin: 50px;
+            margin-top: 35px;
+        }
+        .icon{
+            width: 60px;
+            height: 60px;
+        }
+        .logo-icon h1{
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+        .mc-icon{
+            margin-top: 40px;
+            font-size: 11px;
+        }
+        .hicon{
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+        .ms{
+            margin-right: 70px;
+        }
+        .ct{
+            margin-right: 85px;
+        }
+        .tha{
+            color: black;
+        }
+        .tha :hover{
+            color: rgb(201, 150, 56);
+        }
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+        .form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+        .input, button,.submit {
+            border: none;
+            outline: none;
+        }
+        .input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+        .button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+        /*搜尋框1*/
+        .bar1 .input {
+            border: 2px solid black;
+        }
+        .bar1 .button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+        .bar1 .button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+        /*logo+會員專區+購物車*/
+        .bottom-header{
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+        .bh{
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+        
+        .leaderboard {
+            left: 5%;
+        }
+
+        .book {
+            left: 20%;
+        }
+
+        .magazine {
+            left: 35%;
+        }
+
+        .comic {
+            left: 50%;
+        }
+
+        .novel {
+            left: 65%;
+        }
+
+        .aboutus {
+            left: 80%;
+        }
+
+        .bh:hover{
+            background-color: white;
+        }
+        .bh:hover h2{
+            color: black;
+        }
+        .bh h2{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .top{
+            position: relative;
+            margin: 50px auto;
+            width: 80%;
+            height: 2200px;
+        }
+        .left{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 53%;
+            height: 700px;
+        }
+        .right{
+            position: absolute;
+            top: 100px;
+            left: 53%;
+            width: 47%;
+            height: 700px;
+        }
+        .container{
+            margin: 0 auto;
+            width: 65%;
+        }
+        /*商品圖片*/
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+        /*商品圖片*/
+        .title{
+            margin-bottom: 20px;
+        }
+        .t1{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .t2{
+            font-weight: bold;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .t3_1,.t3_2{
+            font-weight: bold;
+            color: rgb(179, 35, 35);
+        }
+        .t3_2{
+            font-size: 35px;
+        }
+        .intro,.detail{
+            margin: 5% auto;
+        }
+        .i2{
+            font-weight: bolder;
+        }
+        /**/
+        .btn_all{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .btn{
+            height: 40px;
+            color: rgb(179, 35, 35);
+            background-color: white;
+            border: rgb(179, 35, 35) 1px solid;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .b1{
+            width: 20%;
+        }
+        .b2,.b3{
+            width: 39%;
+        }
+        .b3{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b1:hover,.b2:hover{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b3:hover{
+            background-color: rgb(143, 27, 27);
+        }
+        /**/
+        .d1{
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0)
+        }
+        .d2{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        /**/
+        .rating {
+            font-size: 0;
+            display: table;
+        }
+
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        .rating > label:before {
+            padding: 3px;
+            font-size: 30px;
+            line-height: 1em;
+            display: inline-block;
+            content: "★";
+        }
+
+        .rating > input:checked ~ label,
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            opacity: 0.5;
+        }
+        /**/
+        .score,.discuss{
+            width: 80%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .ratings {
+            vertical-align: middle;
+            position: relative;
+            display: inline-block;
+            color: #ddd; /*背景星星顏色*/
+            overflow: hidden;
+            font-size: 30px; /*調整字體大小可放大縮小星星*/
+        }
+        .full_star {
+            width: 90%; /*調整寬度可變更星等*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFD700; /*前景星星顏色*/
+        }
+        .dis{
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .dis1{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            
+        }
+        .dis2{
+            position: absolute;
+            top: 10%;
+            height: 30%;
+            width: 100%;
+            font-weight: bold;
+        }
+        .dis3{
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 60%;
+            padding: 10px;
+            background-color: rgba(221, 221, 221, 0.692);
+            border: black 1px solid;
+            border-radius: 5px;
+        }
+        .submit{
+            position: relative;
+            margin-left: 79%;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            width: 55px;
+            height: 23px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .user_icon{
+            width: 25px;
+            height: 25px;
+            vertical-align: text-bottom;
+        }
+        .top1{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /*完讀書評*/
+        .footer{
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="../index.html">
+                    <div class="logo-icon">
+                        <img class="icon ebook" src="../icon/open-book.png" alt="素材">
+                        <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                    </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form class="form">
+                                <input class="input" type="text">
+                                <button class="button" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="../member.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ms" src="../icon/profile-user.png" alt="素材">
+                        <h2>會員專區</h2>
+                    </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="../cart.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ct" src="../icon/shopping-cart.png" alt="素材">
+                        <h2>購物車</h2>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="../about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="../leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="../book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="../magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="../comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="../novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="top">
+            <div class="left">
+                <div class="container">
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="img" src="../picture/book/social4.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img class="img" src="../picture/book/social4.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="img" src="../picture/book/social4.jpg" style="width:100%">
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                
+                        // Next/previous controls
+                        function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                        }
+                
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                        }
+                
+                        function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " active";
+                        }
+                    </script>
+                </div>
+                <br><br><br>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="score">
+                    <span class="d1">我的評分</span><br><br>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" hidden/>
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4" hidden/>
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3" hidden/>
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2" hidden/>
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1" hidden/>
+                        <label for="star1"></label>
+                    </div>
+                    <form action="">
+                        書評標題:<br><input class="dis" type="text" size="59"><br>
+                        書評內文:<br><textarea class="dis" name="" id="" cols="55" rows="6"></textarea><br>
+                        <input class="submit" type="submit" value="送出">
+                    </form>
+                </div>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="discuss">
+                    <span class="d1">完讀書評<br><br></span>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Sandy寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>我覺得這本書很棒!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span class="t1">文青這種生物，自古就有<br></span>
+                    <span class="t2">17段隱藏在史籍和作品背後的奇葩人生<br></span>
+                    
+                    <div class="ratings">
+                        <div class="empty_star">★★★★★</div>
+                        <div class="full_star">★★★★★</div>
+                    </div>
+                    <br>
+                    <span class="t3_1">NT$</span><span class="t3_2">217</span><br><br>
+                    <span class="t4">
+                        作者： 江仲淵<br> 
+                        出版社：究竟出版<br> 
+                        出版日期：2020/12/01
+                    </span>
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="intro">
+                    <span class="i2">
+                        「文青」並非現代產物，「奇葩」卻是共通特徵；<br>
+                        琴棋書畫不必完全精通，讓人印象深刻才能名留青史！<br>
+                        <br>
+                        不是擁有特定裝扮或行為的生物才叫「文青」。<br>
+                        雖然有時會歪樓，但愛好文藝、不願屈從世俗的他們，<br>
+                        其實都是不折不扣的歷代極品文青──
+                    </span>
+                    <br><br>
+                </div>
+                <div class="btn_all">
+                    <input class="btn b1 input" type="button" value="♡ 收藏" onclick="self.location.href='../member.html'">
+                    <input class="btn b2 input" type="button" value="加入購物車">
+                    <input class="btn b3 input" type="button" value="直接購買" onclick="self.location.href='../member.html'">
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="detail">
+                    <span class="d1">詳細書訊<br><br></span>
+                    <span class="d2">
+                        ★最年輕的歷史作家：
+                    </span><br>
+                    <span>
+                        臉書粉絲頁「歷史說書人 History Storyteller」創辦人、當代最年輕歷史作家江仲淵全新力作，<br>
+                        講述17位特色各異的文青故事，挖掘隱藏在史籍和作品背後的奇葩人生！
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        ★文青是怎樣煉成的
+                    </span><br>
+                    <span>
+                        以輕鬆的筆調、略帶戲謔的口吻和深刻的同理，
+                        讓讀者了解文青如何成為一代文青，以及他們各自的「極品」之處。                    
+                    </span>
+                    <br><br>
+                    <span>
+                        「文青」並非現代產物，「奇葩」卻是共通特徵；<br>
+                        琴棋書畫不必完全精通，讓人印象深刻才能名留青史！<br>
+                        <br>
+                        不是擁有特定裝扮或行為的生物才叫「文青」。<br>
+                        雖然有時會歪樓，但愛好文藝、不願屈從世俗的他們，<br>
+                        其實都是不折不扣的歷代極品文青──
+                        <br><br>
+                        ◎ 唐伯虎一生困頓，不但沒點到秋香，還得為了保全性命和名譽露屁股？<br>
+                        ◎ 面對仕途的不順遂，蘇軾決定用「吃」與世界對決！<br>
+                        ◎ 傾國家之力蒐集歷代文物，乾隆a.k.a.「最狂印章boy」上線啦！<br>
+                        ◎ 倪瓚的潔癖不但表現在生活與畫作中，也讓他成為廁所發明家？<br>
+                        ◎ 辛棄疾一心想縱橫沙場，「豪放派詞人」的稱號其實收得莫名其妙？<br>
+                        <br>
+                        這些人，要不「不務正業」，要不「歪打正著」，
+                        有些則莫名其妙點到奇怪的技能樹，還有難以歸類的非典型。
+                        儘管這些曾引領風騷的歷代文青褒貶不一，
+                        但透過史料爬梳＋現代角度同理，
+                        總能讀出隱藏在作品背後的各種心酸與堅強！
+                        <br><br>
+                        對許多人而言，歷史人物就像證件照，平板、沒有表情、毫無生氣；古代的文學和藝術作品也都是早該棄舊迎新的老東西。但事實上，我們所面臨的人生困境，歷代文青早就遇過一輪，甚至有過之而無不及。
+                        <br><br>
+                        或廢或威，或功或過，或厭世或進取，儘管留待後人評價，但他們確實推動了一整個時代，所留下的許多作品甚至成為人類的無價之寶。
+                        <br><br>
+                        從詩詞書畫到樂舞工藝，4大類別、17位在各領域引領風騷的歷史人物，用作品訴說自己的真心、擴充文化的內涵，並形塑了今日文明的樣貌。本書將帶領讀者看見這些人獨特、出色和自負的一面，也讀懂他們內心的堅持、放達、哀傷與無奈。
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        ※ 書評、推薦
+                    </span>
+                    <br><br>
+                    <span>
+                        蔣竹山（中央大學歷史所副教授兼所長）<br>
+                        胡川安（中央大學中文系助理教授）<br>
+                        普通人（《非普通三國》作者）<br>
+                        黑貓老師（《歷史，就是戰》作者）<br>
+                        宋彥陞（時空偵探．專欄作家）<br>
+                        cheap（歷史YouTuber）<br>
+                        ──懂文青推薦                    
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        作者：江仲淵
+                    </span>
+                    <br><br>
+                    <span>
+                        臉書「歷史說書人 History Storyteller」團隊創辦人，古人黑歷史挖掘專家、文學研究扒皮手，擅長以生動幽默的文筆講述歷史人物。
+                        <br><br>
+                        目前擔任關鍵評論網、風傳媒、今周刊、自由電子報自由評論網等四家媒體專欄作家。完成《時代下的犧牲者：找尋真實的汪精衛》時，年僅十七歲，是臺灣當代最年輕的史學作家，目前則仍在大學就讀中。
+                         <br><br>
+                        著有《民國文人檔案，重建中》《時代下的犧牲者：找尋真實的汪精衛》《時代下的毀滅者：希特勒與帝國十大信徒》等書。                    </span>
+                    <br>                
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top1" src="../icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+</html>

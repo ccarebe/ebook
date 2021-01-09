@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寂寞的誕生 : 寂寞為何成為現代流行病？-菲伊．邦德．艾貝蒂 | TheBook Life</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0 auto;
+        }
+        a {
+            text-decoration:none;
+            color: black;
+        }
+        .header{
+            background-color: white;
+            width: 100%;
+            height: 130px;
+            top: 0;
+            left: 0;
+        }
+        .top-header{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .th{
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        .logo{
+            width: 30%;
+            left: 5%;
+        }
+        .search{
+            width: 40%;
+            left: 25%;
+        }
+        .member{
+            width: 10%;
+            left: 70%;
+            text-align: right;
+        }
+        .cart{
+            width: 10%;
+            left: 80%;
+            text-align: center;
+        }
+        .logo-icon{
+            margin: 50px;
+            margin-top: 35px;
+        }
+        .icon{
+            width: 60px;
+            height: 60px;
+        }
+        .logo-icon h1{
+            margin-top: -53px;
+            margin-left: 65px;
+            font-size: 48px;
+        }
+        .mc-icon{
+            margin-top: 40px;
+            font-size: 11px;
+        }
+        .hicon{
+            width: 30px;
+            height: 30px;
+            margin-right: 78px;
+            margin-bottom: -40px;
+        }
+        .ms{
+            margin-right: 70px;
+        }
+        .ct{
+            margin-right: 85px;
+        }
+        .tha{
+            color: black;
+        }
+        .tha :hover{
+            color: rgb(201, 150, 56);
+        }
+        /*搜尋引擎*/
+        div.search {
+            padding: 30px 0;
+        }
+        .form {
+            position: relative;
+            width: 550px;
+            margin-left: 50px;
+            margin-top: -10px;
+        }
+        .input, button,.submit {
+            border: none;
+            outline: none;
+        }
+        .input {
+            width: 100%;
+            height: 30px;
+            padding-left: 10px;
+        }
+        .button {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+        }
+        /*搜尋框1*/
+        .bar1 .input {
+            border: 2px solid black;
+        }
+        .bar1 .button {
+            top: 0;
+            right: 0;
+            background: black;
+        }
+        .bar1 .button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: white;
+        }
+        /*logo+會員專區+購物車*/
+        .bottom-header{
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: black;
+        }
+        .bh{
+            position: absolute;
+            width: 15%;
+            height: 90%;
+            top: 4px;
+        }
+        
+        .leaderboard {
+            left: 5%;
+        }
+
+        .book {
+            left: 20%;
+        }
+
+        .magazine {
+            left: 35%;
+        }
+
+        .comic {
+            left: 50%;
+        }
+
+        .novel {
+            left: 65%;
+        }
+
+        .aboutus {
+            left: 80%;
+        }
+
+        .bh:hover{
+            background-color: white;
+        }
+        .bh:hover h2{
+            color: black;
+        }
+        .bh h2{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+        /*關於我們+暢銷排行+書籍分類連結*/
+        .top{
+            position: relative;
+            margin: 50px auto;
+            width: 80%;
+            height: 2100px;
+        }
+        .left{
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 53%;
+            height: 700px;
+        }
+        .right{
+            position: absolute;
+            top: 100px;
+            left: 53%;
+            width: 47%;
+            height: 700px;
+        }
+        .container{
+            margin: 0 auto;
+            width: 65%;
+        }
+        /*商品圖片*/
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+        /*商品圖片*/
+        .title{
+            margin-bottom: 20px;
+        }
+        .t1{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .t2{
+            font-weight: bold;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        .t3_1,.t3_2{
+            font-weight: bold;
+            color: rgb(179, 35, 35);
+        }
+        .t3_2{
+            font-size: 35px;
+        }
+        .intro,.detail{
+            margin: 5% auto;
+        }
+        .i2{
+            font-weight: bolder;
+        }
+        /**/
+        .btn_all{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .btn{
+            height: 40px;
+            color: rgb(179, 35, 35);
+            background-color: white;
+            border: rgb(179, 35, 35) 1px solid;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .b1{
+            width: 20%;
+        }
+        .b2,.b3{
+            width: 39%;
+        }
+        .b3{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b1:hover,.b2:hover{
+            color: white;
+            background-color: rgb(179, 35, 35);
+        }
+        .b3:hover{
+            background-color: rgb(143, 27, 27);
+        }
+        /**/
+        .d1{
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0)
+        }
+        .d2{
+            font-weight: bold;
+            color: palevioletred;
+        }
+        /**/
+        .rating {
+            font-size: 0;
+            display: table;
+        }
+
+        .rating > label {
+            color: #ddd;
+            float: right;
+        }
+
+        .rating > label:before {
+            padding: 3px;
+            font-size: 30px;
+            line-height: 1em;
+            display: inline-block;
+            content: "★";
+        }
+
+        .rating > input:checked ~ label,
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #FFD700;
+        }
+
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            opacity: 0.5;
+        }
+        /**/
+        .score,.discuss{
+            width: 80%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .ratings {
+            vertical-align: middle;
+            position: relative;
+            display: inline-block;
+            color: #ddd; /*背景星星顏色*/
+            overflow: hidden;
+            font-size: 30px; /*調整字體大小可放大縮小星星*/
+        }
+        .full_star {
+            width: 100%; /*調整寬度可變更星等*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFD700; /*前景星星顏色*/
+        }
+        .dis{
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .dis1{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            
+        }
+        .dis2{
+            position: absolute;
+            top: 10%;
+            height: 30%;
+            width: 100%;
+            font-weight: bold;
+        }
+        .dis3{
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            height: 60%;
+            padding: 10px;
+            background-color: rgba(221, 221, 221, 0.692);
+            border: black 1px solid;
+            border-radius: 5px;
+        }
+        .submit{
+            position: relative;
+            margin-left: 79%;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            width: 55px;
+            height: 23px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .user_icon{
+            width: 25px;
+            height: 25px;
+            vertical-align: text-bottom;
+        }
+        .top1{
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 100%;
+            border: 2px solid white;
+        }
+        /*完讀書評*/
+        .footer{
+            width: 100%;
+            height: 90px;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="header">
+            <div class="top-header">
+                <div class="logo th">
+                    <a href="../index.html">
+                    <div class="logo-icon">
+                        <img class="icon ebook" src="../icon/open-book.png" alt="素材">
+                        <h1>ᵀʰᵉᴮᵒᵒᵏ ᴸᶤᶠᵉ</h1>
+                    </div>
+                    </a>
+                </div>
+                <div class="search th">
+                    <div id="container">
+                        <div class="search bar1">
+                            <form class="form">
+                                <input class="input" type="text">
+                                <button class="button" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="member th">
+                    <a href="../member.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ms" src="../icon/profile-user.png" alt="素材">
+                        <h2>會員專區</h2>
+                    </div>
+                    </a>
+                </div>
+                <div class="cart th">
+                    <a href="../cart.html" class="tha">
+                    <div class="mc-icon">
+                        <img class="hicon ct" src="../icon/shopping-cart.png" alt="素材">
+                        <h2>購物車</h2>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-header">
+                <a href="../about.html">
+                    <div class="aboutus bh">
+                        <h2>關於我們</h2>
+                    </div>
+                </a>
+                <a href="../leaderboard.html">
+                    <div class="leaderboard bh">
+                        <h2>暢銷排行</h2>
+                    </div>
+                </a>
+                <a href="../book.html">
+                    <div class="book bh">
+                        <h2>書籍</h2>
+                    </div>
+                </a>
+                <a href="../magazine.html">
+                    <div class="magazine bh">
+                        <h2>雜誌</h2>
+                    </div>
+                </a>
+                <a href="../comic.html">
+                    <div class="comic bh">
+                        <h2>漫畫</h2>
+                    </div>
+                </a>
+                <a href="../novel.html">
+                    <div class="novel bh">
+                        <h2>小說</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="top">
+            <div class="left">
+                <div class="container">
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="img" src="item/p_1_1_1.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img class="img" src="item/p_1_1_1.jpg" style="width:100%">
+                        </div>
+                    
+                        <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="img" src="item/p_1_1_1.jpg" style="width:100%">
+                        </div>
+                    
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                    
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+                
+                        // Next/previous controls
+                        function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                        }
+                
+                        // Thumbnail image controls
+                        function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                        }
+                
+                        function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " active";
+                        }
+                    </script>
+                </div>
+                <br><br><br>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="score">
+                    <span class="d1">我的評分</span><br><br>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" hidden/>
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4" hidden/>
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3" hidden/>
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2" hidden/>
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1" hidden/>
+                        <label for="star1"></label>
+                    </div>
+                    <form action="">
+                        書評標題:<br><input class="dis" type="text" size="59"><br>
+                        書評內文:<br><textarea class="dis" name="" id="" cols="55" rows="6"></textarea><br>
+                        <input class="submit" type="submit" value="送出">
+                    </form>
+                </div>
+                <hr color="gray" size="1px" align="center" width="90%">
+                <div class="discuss">
+                    <span class="d1">完讀書評<br><br></span>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Sandy寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>我覺得這本書很棒!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                    <div class="dis1">
+                        <div class="dis2">
+                            <img class="user_icon" src="../icon/user.png" alt="素材">
+                            <span class="user">Hank寫了書評。</span>
+                        </div>
+                        <div class="dis3">
+                            <span>這本書很棒，很值得選讀!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <span class="t1">寂寞的誕生<br></span>
+                    <span class="t2">
+                        寂寞為何成為現代流行病？<br>
+                        A Biography of Lonliness
+                    </span><br><br>
+                    
+                    <div class="ratings">
+                        <div class="empty_star">★★★★★</div>
+                        <div class="full_star">★★★★★</div>
+                    </div>
+                    <br>
+                    <span class="t3_1">NT$</span><span class="t3_2">310</span><br><br>
+                    <span class="t4">
+                        作者： 菲伊．邦德．艾貝蒂<br> 
+                        譯者： 涂瑋瑛<br>
+                        出版社：商周出版<br> 
+                        出版日期：2020/12/03
+                    </span>
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="intro">
+                    <span class="i2">
+                        寂寞已經悄悄成為二十一世紀最大規模的流行病，在世界各國，身陷寂寞的老人、獨身者與憂鬱症患者，都造成了日益沉重的醫療與社會負擔。這波心理疫情仍在逐漸擴大，但這場大流行是從何時開始、又是如何蔓延，卻一直缺乏足夠的關注與討論。
+                    </span>
+                    <br><br>
+                </div>
+                <div class="btn_all">
+                    <input class="btn b1 input" type="button" value="♡ 收藏" onclick="self.location.href='../member.html'">
+                    <input class="btn b2 input" type="button" value="加入購物車">
+                    <input class="btn b3 input" type="button" value="直接購買" onclick="self.location.href='../member.html'">
+                </div>
+                <hr color="gray" size="1px" align="left" width="100%">
+                <div class="detail">
+                    <span class="d1">詳細書訊<br><br></span>
+                    <span class="d2">
+                        「寂寞昭示了我們想要在這個世界成為什麼樣的人、我們想要擁有的關係與紐帶、我們渴望獲得關注的需求——即使這些需求沒有獲得溝通或傾聽。」
+                        <br><br>
+                    </span>
+                    <span>
+                        ▋工業化程度愈高的國家，寂寞的問題就愈嚴重。<br>
+                        在英國，甚至不得不成立「寂寞部長」來應對日益高漲的醫療與社會問題<br><br>
+
+                        我們很容易覺得「寂寞」是一種普遍、永恆的固有現象，但事實很可能不是如此。「單獨」（oneliness）在長久以來，一直被視為追求自我平靜，或是與上帝交流的珍貴時刻。但到了19世紀，宗教沒落、工業社會急速發展，「寂寞」（loneliness）這個詞也是在這時出現，且很快就成為一種負面疾病，反映出人與人的日漸疏離。
+                        <br><br>
+                        ▋現代寂寞是19世紀的產物，且新的寂寞類型還在不斷增加。<br>
+                        在實體世界缺乏交流的人，在虛擬世界也很難填補寂寞<br><br>
+
+                        情緒歷史學家暨本書作者菲伊・邦德‧艾貝蒂，在書中審讀從18世紀至今的上千份信件、日記、政策討論和醫學報告，並進行了豐富的個案研究。從美國天才詩人普拉斯、女性主義先驅吳爾芙、到現代小說《暮光之城》，呈現出寂寞是如何連結情感、家庭與自我價值的匱乏。此外，也探討了物質主義、社群媒體，甚至移民問題，是如何在現代塑造出新的寂寞，甚至成為廣告商利用的對象。
+                        <br><br>
+                        ▋如何在新自由主義時代重塑寂寞的意義？
+                        <br><br>
+                        寂寞已然成為現代人難以逃開的境況，但寂寞不一定是總是有害的，也可以是創造性、敏銳、自我洞察的起點，關鍵在於我們如何理解與照料這種情緒。當我們對寂寞瞭解愈多，愈能坦然面對身處寂寞之中的他人與自己。
+                    </span><br><br>
+                    <span class="d2">
+                        ※ 媒體推薦
+                    </span>
+                    <br><br>
+                    <span>
+                        「引人入勝……我向所有讀者強烈推薦這本重要的著作。」<br>
+                        ──亞倫．本－澤耶夫（Aaron Ben-Ze'ev）
+                        <br><br>
+                        「本書以極具說服力的方式描述了寂寞的成因與結果。」<br>
+                        ──芭芭拉．泰勒（Barbara Taylor）
+                        <br><br>
+                        「菲伊．邦德．艾貝蒂以風趣又優雅的態度，透過寂寞的偽裝與變形，追溯這種往往令人痛苦的情緒所構成的故事。」<br>
+                        ──芭芭拉．羅森溫（Barbara H. Rosenwein）
+                        <br><br>
+                        「本書不僅探討過去兩世紀以來情緒史的數個面向，也以富有人性的態度理解當今的議題與可能性。」<br>
+                        ──彼得．斯坦恩斯（Peter Stearns）
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        作者：菲伊・邦德・艾貝蒂 ( Fay Bound Alberti )
+                    </span>
+                    <br><br>
+                    <span>
+                        英國性別、情緒和醫學文化史學家，現任倫敦瑪麗皇后大學歷史學名譽高級研究員、英國皇家歷史學會（FRHist）會員，也是約克大學歷史系和英國國家研究創新局（UKRI）未來領袖學者。
+                        <br><br>
+                        艾貝蒂曾任教於曼徹斯特大學、蘭卡斯特大學、倫敦瑪麗皇后大學、倫敦大學學院與約克大學，她的著作包括《探討內心：歷史、醫學、情緒》（Matters of the Heart: History, Medicine, and Emotion, 2010）、《塵世紛擾：歷史與文化中的人體》（This Mortal Coil: The Human Body in History and Culture, 2016）。
+                    </span>
+                    <br><br>
+                    <span class="d2">
+                        譯者：涂瑋瑛
+                    </span>
+                    <br>
+                    <span>
+                        國立臺灣大學獸醫學系畢業，國立臺灣師範大學翻譯研究所碩士，曾任動物醫院獸醫師，現為專職譯者，譯有《骰子能扮演上帝嗎？18個不確定性的數學思考》（商周出版，2020）。
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#home"><img class="top1" src="../icon/chevron-upwards-arrow.png" alt=""></a>
+    <footer>
+        <div class="footer">
+            Copyright © 2020 TheBook Life.All rights reserved.<br>
+            <span style="font-style: italic;">" Just Enjoy Your Book Life "</span>
+        </div>
+    </footer>
+</body>
+</html>

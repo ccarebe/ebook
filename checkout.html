@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結帳櫃檯 | TheBook Life</title>
+    <script>
+        function show(){
+            alert("你的訂單已完成!");
+        }
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -161,7 +166,7 @@
         <div class="main">
             <div class="s1">
                 <div class="title">
-                    <span>購物車明細 共 <span style="color: rgb(179, 35, 35);">2</span> 項商品</span>
+                    <span>購物車明細 共 <span style="color: rgb(179, 35, 35);">3</span> 項商品</span>
                 </div>
                 <div class="tb">
                     <table width="500">
@@ -170,12 +175,16 @@
                             <th>價格</th>
                         </tr>
                         <tr>
-                            <td colspan="2">焦慮的人</td>
-                            <td>NT$ 265</td>
+                            <td colspan="2">文青這種生物，自古就有</td>
+                            <td>NT$ 217</td>
                         </tr>
                         <tr style="border-bottom: 1px solid black;">
                             <td colspan="2">大腦這樣記憶，什麼都學得會</td>
                             <td>NT$ 252</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid black;">
+                            <td colspan="2">想清楚，寫明白</td>
+                            <td>NT$ 285</td>
                         </tr>
                     </table>
                 </div>
@@ -183,15 +192,15 @@
                     <table>
                         <tr>
                             <td>訂單小計：</td>
-                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">574</span> 元</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">754</span> 元</td>
                         </tr>
                         <tr>
-                            <td>促銷折抵：</td>
-                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">57</span> 元</td>
+                            <td>折價卷折抵：</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">100</span> 元</td>
                         </tr>
                         <tr>
                             <td>訂單總計</td>
-                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">517</span> 元</td>
+                            <td>NT$ <span style="color: rgb(179, 35, 35);font-weight: bold;">654</span> 元</td>
                         </tr>
                     </table>
                 </div>
@@ -237,7 +246,7 @@
                         <input type="checkbox" name="interest" checked />儲存發票資訊
                     </form>
                     <br><br><br>
-                    <input class="btn" type="submit" name="" value="完成付款" onclick="self.location.href='index.html'">
+                    <input class="btn" type="submit" name="" value="完成付款" onclick="show(),self.location.href='index.html'">
                     <br>
                     <span style="font-size: 14px;">按下確定付款即表示同意辦理退貨時，由 TheBook Life 電子書代為處理發票及銷貨退回證明單，以加速退貨退款作業。</span>
                 </div>
